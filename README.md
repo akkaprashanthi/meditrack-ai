@@ -1,214 +1,564 @@
-# MediTrack AI
+# MediTrack AI – Intelligent Appointment No-Show Management
 
-MediTrack AI is a healthcare operations dashboard prototype for reviewing appointment activity, identifying recorded no-shows, estimating no-show risk, and documenting outreach. It uses synthetic data only. It is not a clinical system, and its model has not been clinically validated.
+MediTrack AI is a healthcare operations dashboard prototype designed to help clinic staff identify missed appointments, estimate patient no-show risk using machine learning, generate actionable follow-up recommendations, and track outreach activities.
 
-## Problem and Project Overview
+The application combines a React dashboard, FastAPI backend, scikit-learn prediction pipeline, rule-based recommendation engine, and SQLite persistence to demonstrate an end-to-end appointment management workflow.
 
-Missed appointments can reduce clinic capacity and disrupt scheduling. MediTrack AI demonstrates a workflow for clinic staff to review appointment and department trends, inspect a no-show appointment, receive rule-based outreach suggestions informed by a scikit-learn risk model, and record a follow-up action.
+**Note:** This project uses synthetic appointment data only. It is a demonstration prototype, not a clinical system. Its machine learning model has not been clinically validated and must not be used for real clinical decisions.
 
-## Features and Implemented Requirements
+## Problem Statement
 
-- Appointment list with patient search, status/department/date filters, and date/patient/status sorting in both directions.
-- Dashboard counts, no-show trends, department statistics, and recent no-shows.
-- Scikit-learn classification pipeline trained and evaluated using reproducible synthetic records.
-- Three deterministic, actionable follow-up recommendations for an appointment.
-- Persistent SQLite appointment and follow-up records; completing outreach does not overwrite the original `No-Show` status.
-- TTL caching for appointment lists, appointment details, dashboard statistics, and analytics, with invalidation after follow-up writes.
-- FastAPI validation and OpenAPI documentation.
-- Automated backend tests and a production Vite build.
+Missed medical appointments can reduce clinic capacity, affect scheduling efficiency, and create additional administrative work.
 
-## Architecture
+Clinic staff need a convenient way to:
 
-- `frontend/`: React single-page app, Vite build tooling, Tailwind styling, Axios API client, Recharts analytics, and Lucide icons.
-- `backend/main.py`: loads environment configuration, assembles FastAPI routers, initializes the database and seed records, provisions a missing dataset/model, and verifies model loading before serving.
-- `backend/routers/`: HTTP endpoints for appointments, recommendations, follow-ups, and analytics.
-- `backend/models.py` and `backend/database.py`: SQLAlchemy schema, SQLite engine, and session lifecycle.
-- `backend/services/`: model inference, preprocessing, deterministic recommendations, and TTL cache.
-- `backend/ml/`: reproducible synthetic-data generation and model comparison/training.
-- `backend/tests/`: Pytest tests for API behavior, persistence, caching, preprocessing, and model/recommendation behavior.
+- Identify patients who missed their scheduled appointments.
+- Review appointment details and historical patterns.
+- Understand estimated no-show risk.
+- Receive practical follow-up suggestions.
+- Record outreach activities and track completion.
+
+MediTrack AI demonstrates how machine learning and automated workflows can support these operational activities through a centralized dashboard.
+
+## Key Features
+
+### 1. Appointment Management
+- View appointments in a centralized dashboard.
+- Highlight recorded no-show appointments in red.
+- Search appointments by patient information.
+- Filter by appointment status, department, and date.
+- Sort by patient name, appointment date, and status in ascending or descending order.
+- Inspect individual appointment details.
+
+### 2. Machine Learning-Based No-Show Prediction
+- Uses a scikit-learn classification pipeline to estimate no-show risk.
+- Preprocesses numerical and categorical appointment features.
+- Handles missing values through imputation.
+- Applies numerical scaling and categorical encoding.
+- Compares multiple classification algorithms.
+- Uses a validation-based threshold selection process.
+
+### 3. Actionable Follow-Up Recommendations
+- Generates three deterministic recommendations for a no-show appointment.
+- Uses appointment context and predicted risk to inform outreach suggestions.
+- Provides practical actions such as phone calls, rescheduling, and reminder-related follow-up.
+- Helps clinic staff prioritize follow-up activities.
+
+### 4. Follow-Up Tracking
+- Record outreach actions and notes.
+- Mark follow-up activities as completed.
+- Persist follow-up information in SQLite.
+- Preserve the original appointment status when an outreach activity is completed.
+- Maintain a separate follow-up history.
+
+### 5. Analytics Dashboard
+- Display appointment statistics and no-show counts.
+- Visualize no-show trends.
+- Compare department-level appointment statistics.
+- Review recent no-show activity.
+
+### 6. Performance and Reliability
+- TTL caching for frequently accessed appointment and analytics data.
+- Cache invalidation after follow-up updates.
+- FastAPI request validation and error handling.
+- Automated backend tests.
+- Responsive React-based dashboard.
+
+## System Architecture
+
+MediTrack AI follows a modular frontend-backend architecture.
+
+```text
+                  Clinic Staff
+                       |
+                       v
+                React Dashboard
+                       |
+                       v
+                 FastAPI Backend
+                       |
+          +------------+------------+
+          |            |            |
+          v            v            v
+      Appointment   ML Service   Analytics
+       Management       |         Service
+          |             v
+          |        Risk Prediction
+          |             |
+          |             v
+          |     Recommendation Engine
+          |             |
+          +-------------+
+                |
+                v
+           Follow-Up API
+                |
+                v
+             SQLite DB
+                |
+                v
+       Persistent Follow-Up Records
+```
+
+### Component Overview
+
+| Component | Responsibility |
+|---|---|
+| React Frontend | Dashboard, appointment management, analytics, and follow-up interface |
+| FastAPI Backend | REST API endpoints and application logic |
+| ML Service | Data preprocessing, model loading, and no-show risk prediction |
+| Recommendation Service | Generates deterministic follow-up recommendations |
+| Cache Service | Stores frequently accessed responses using TTL caching |
+| SQLAlchemy | Database models and persistence |
+| SQLite | Stores appointments and follow-up records |
 
 ## Technology Stack
 
-- Frontend: React 18, Vite, JavaScript, Tailwind CSS, Axios, Recharts, Lucide React.
-- Backend: Python 3.12+, FastAPI, Pydantic, SQLAlchemy, SQLite, Uvicorn.
-- ML and data: scikit-learn, pandas, NumPy, joblib.
-- Testing and cache: Pytest, HTTPX, cachetools.
+| Category | Technologies |
+|---|---|
+| Frontend | React 18, Vite, JavaScript, Tailwind CSS |
+| UI and Visualization | Recharts, Lucide React |
+| API Communication | Axios, REST APIs |
+| Backend | Python, FastAPI, Pydantic, Uvicorn |
+| Machine Learning | Scikit-learn |
+| Data Processing | Pandas, NumPy |
+| Model Persistence | Joblib |
+| Database | SQLite, SQLAlchemy |
+| Caching | Cachetools TTLCache |
+| Testing | Pytest, HTTPX |
+| Deployment | Docker-compatible backend, static frontend hosting |
 
-## ML Pipeline and Evaluation
+## Machine Learning Pipeline
 
-The target is generated by converting a weighted combination of prior no-shows, prior cancellations, days since last visit, appointment time/day, reminder state, appointment type, department, and booking lead time into a Bernoulli probability. The generated target therefore contains sampling noise. The input `previous_appointments` field is retained in appointment data and preprocessing validation but excluded from the classifier because it does not contribute to the target formula.
+### Dataset
 
-The reproducible generator uses seed `42`; the synthetic CSV currently included in the project tree contains 1,200 records. The latest regeneration produced 206 positive labels (17.17%) and 994 negative labels. A clean deployment can generate this CSV if it is absent.
+The project uses a reproducible synthetic dataset containing 1,200 appointment records.
 
-The training script uses a stratified 64%/16%/20% train/validation/test split (768/192/240 records for this dataset). Each model uses an sklearn `Pipeline`; imputation, scaling, and one-hot encoding are fit only on training data. Candidate models are DummyClassifier, Logistic Regression, Random Forest, and Extra Trees. Model selection and threshold selection use validation F1 only. Threshold search evaluates 181 candidates from 0.05 through 0.95. The test set is held out for final reporting and is not used to select the model or threshold.
+The synthetic dataset includes features such as:
 
-The selected model in the latest run was **Extra Trees**, threshold **0.30**. The threshold is saved on the joblib pipeline and applied by `MLService`. Results on the held-out test split:
+- Previous no-show history.
+- Previous cancellations.
+- Days since the last visit.
+- Appointment time and day.
+- Reminder status.
+- Appointment type.
+- Department.
+- Booking lead time.
 
-| Model | Threshold | Accuracy | Precision | Recall | F1 | ROC-AUC | Confusion matrix |
-|---|---:|---:|---:|---:|---:|---:|---|
-| Dummy prior | 0.05 | 0.1708 | 0.1708 | 1.0000 | 0.2918 | 0.5000 | `[[0, 199], [0, 41]]` |
-| Logistic Regression | 0.13 | 0.1708 | 0.1708 | 1.0000 | 0.2918 | 0.6357 | `[[0, 199], [0, 41]]` |
-| Random Forest | 0.23 | 0.5125 | 0.2031 | 0.6341 | 0.3077 | 0.6014 | `[[97, 102], [15, 26]]` |
-| Extra Trees (selected) | 0.30 | 0.5750 | 0.2150 | 0.5610 | 0.3108 | 0.5993 | `[[115, 84], [18, 23]]` |
+The synthetic target is generated from a weighted combination of selected appointment features, converted into a probability, and sampled as a binary outcome.
 
-Each result has 41 positive and 199 negative test records. Confusion matrices are `[[TN, FP], [FN, TP]]`. Performance is weak and reflects a small synthetic demonstration dataset; none of these numbers establish clinical validity or real-world performance. Re-running training may produce different results if the generator or split implementation changes.
+The latest dataset contains:
 
-Run the evaluation/training script from `backend/`:
+- Total records: 1,200
+- Positive labels: 206
+- Negative labels: 994
+- Positive class proportion: 17.17%
 
-```powershell
+The generator uses random seed `42` for reproducibility.
+
+### Data Preprocessing
+
+The preprocessing pipeline includes:
+
+1. Handling missing numerical and categorical values.
+2. Numerical feature scaling.
+3. Categorical feature encoding.
+4. Separating training, validation, and test datasets.
+5. Fitting preprocessing transformations only on training data to avoid data leakage.
+
+The `previous_appointments` field is retained in appointment data and preprocessing validation but excluded from classifier inputs because it does not contribute to the synthetic target formula.
+
+### Model Training and Comparison
+
+The following classification algorithms are evaluated:
+
+- Dummy Classifier (baseline).
+- Logistic Regression.
+- Random Forest.
+- Extra Trees Classifier.
+
+The dataset is divided using a stratified split:
+
+| Dataset | Percentage | Records |
+|---|---:|---:|
+| Training | 64% | 768 |
+| Validation | 16% | 192 |
+| Testing | 20% | 240 |
+
+Model and classification threshold selection are performed using validation F1-score. ROC-AUC is used as a tie-breaker. The test dataset is held out for final evaluation.
+
+The training script evaluates 181 classification thresholds between 0.05 and 0.95.
+
+### Model Evaluation
+
+The latest training run selected Extra Trees with a classification threshold of 0.30.
+
+Held-out test results:
+
+| Model | Threshold | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|---:|
+| Dummy Classifier | 0.05 | 0.1708 | 0.1708 | 1.0000 | 0.2918 | 0.5000 |
+| Logistic Regression | 0.13 | 0.1708 | 0.1708 | 1.0000 | 0.2918 | 0.6357 |
+| Random Forest | 0.23 | 0.5125 | 0.2031 | 0.6341 | 0.3077 | 0.6014 |
+| Extra Trees | 0.30 | 0.5750 | 0.2150 | 0.5610 | 0.3108 | 0.5993 |
+
+The selected Extra Trees model achieved an F1-score of approximately 0.311 and ROC-AUC of approximately 0.599 on the held-out test set.
+
+These results indicate limited predictive performance. The dataset is synthetic and relatively small, so the model is intended to demonstrate an ML integration workflow rather than provide clinically reliable predictions.
+
+Confusion matrices use the format `[[TN, FP], [FN, TP]]`.
+
+### Training the Model
+
+Run the following command from the `backend/` directory:
+
+```bash
 python ml/train_model.py
 ```
 
-## API Endpoints
+The trained model is saved as a Joblib artifact and loaded by the backend ML service.
 
-The interactive API reference is available at `http://localhost:8000/docs` when running locally.
+## Recommendation Engine
 
-| Method | Path | Purpose |
+The recommendation engine uses deterministic business rules rather than an external LLM.
+
+It combines appointment context and predicted no-show risk to generate three actionable follow-up suggestions.
+
+Example actions include:
+
+- Contact the patient through a phone call.
+- Offer an alternative appointment slot.
+- Send a follow-up reminder or scheduling communication.
+
+The recommendations are intended to assist clinic staff with operational follow-up. They do not replace staff judgment.
+
+## Database Design
+
+SQLite is used for persistent storage through SQLAlchemy.
+
+The application currently uses two primary tables:
+
+### Appointments
+
+Stores:
+- Patient identifier and name.
+- Appointment date and time.
+- Clinician and department.
+- Appointment type.
+- Historical appointment features.
+- Original appointment status.
+- Follow-up status, action, and notes.
+- Timestamps.
+
+### Follow-Ups
+
+Stores:
+- Appointment foreign key.
+- Patient identifier.
+- Follow-up action.
+- Notes.
+- Follow-up status.
+- Follow-up date.
+- Creation timestamp.
+
+On first startup, the application creates missing database tables and inserts 30 synthetic demonstration appointments if the appointment table is empty.
+
+Follow-up completion is stored separately from the original appointment status. For example, an appointment remains `No-Show` even after its follow-up status becomes `Completed`.
+
+**Database limitation:** SQLite is suitable for this local demonstration and a single backend instance. A managed database would be more appropriate for concurrent multi-instance production deployments.
+
+## Caching and Performance
+
+MediTrack AI uses `cachetools.TTLCache` to reduce repeated database queries and response processing.
+
+### Cache Configuration
+
+- Default TTL: 60 seconds.
+- Maximum cache entries: 256.
+- Cached operations: appointment lists, appointment details, appointment statistics, and analytics.
+- Cache invalidation: related entries are removed after follow-up writes.
+
+### Local Cache Benchmark
+
+The cache was evaluated using the FastAPI TestClient with 30 cold/warm request pairs against the same appointment-list endpoint and parameters.
+
+| Measurement | Result |
+|---|---:|
+| Median cold response | 9.205 ms |
+| Median cached response | 7.159 ms |
+| Observed median reduction | 22.23% |
+| Cache misses | 30 |
+| Cache hits | 30 |
+
+The measured reduction is calculated as:
+
+`((Cold Response - Cached Response) / Cold Response) × 100`
+
+A follow-up write also invalidates the relevant appointment-list cache key, ensuring the next read retrieves updated data.
+
+These measurements represent a small local test and are not a production load benchmark or latency guarantee.
+
+## REST API Endpoints
+
+FastAPI provides REST endpoints for appointment management, recommendations, follow-up tracking, and analytics.
+
+Interactive API documentation is available at:
+
+`http://localhost:8000/docs`
+
+### Health
+
+| Method | Endpoint | Description |
 |---|---|---|
 | GET | `/health` | Backend health status |
-| GET | `/api/appointments` | List appointments; optional `status`, `department`, `patient_name`, `patient_id`, `date`, `sort_by`, `sort_desc` query parameters |
-| GET | `/api/appointments/today` | Today's appointments and count |
-| GET | `/api/appointments/stats` | Dashboard appointment counts and no-show rate |
-| GET | `/api/appointments/{appointment_id}` | Appointment details |
-| GET | `/api/recommendations/{appointment_id}` | Risk-informed recommendation set |
-| POST | `/api/recommendations/{appointment_id}/generate` | Generate recommendations for a recorded No-Show appointment |
-| GET | `/api/followups` | Follow-up log |
+
+### Appointments
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/appointments` | Retrieve appointments with optional filters and sorting |
+| GET | `/api/appointments/today` | Retrieve today's appointments |
+| GET | `/api/appointments/stats` | Retrieve appointment statistics |
+| GET | `/api/appointments/{appointment_id}` | Retrieve appointment details |
+
+Supported appointment-list query parameters include `status`, `department`, `patient_name`, `patient_id`, `date`, `sort_by`, and `sort_desc`.
+
+### Recommendations
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/recommendations/{appointment_id}` | Retrieve recommendations |
+| POST | `/api/recommendations/{appointment_id}/generate` | Generate recommendations for a recorded no-show |
+
+### Follow-Ups
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/followups` | Retrieve follow-up records |
 | POST | `/api/followups` | Create a follow-up record and mark follow-up complete |
-| PATCH | `/api/appointments/{appointment_id}/follow-up` | Follow-up write alias; body appointment ID must match the path |
+| PATCH | `/api/appointments/{appointment_id}/follow-up` | Follow-up update alias |
+
+### Analytics and Monitoring
+
+| Method | Endpoint | Description |
+|---|---|---|
 | GET | `/api/analytics/overview` | Analytics summary |
-| GET | `/api/analytics/weekly-trends` | Seven-day no-show trend |
-| GET | `/api/analytics/department-stats` | Department-level counts and no-show rates |
-| GET | `/api/cache/stats` | TTL, hit/miss counts, cache size, and keys |
-| GET | `/api/model/metrics` | Startup training metrics when trained at startup, otherwise loaded model status |
+| GET | `/api/analytics/weekly-trends` | Seven-day no-show trends |
+| GET | `/api/analytics/department-stats` | Department-level statistics |
+| GET | `/api/cache/stats` | Cache statistics |
+| GET | `/api/model/metrics` | Model training metrics or loaded model status |
 
-Example requests:
+## Local Installation and Setup
 
-```powershell
-curl.exe "http://localhost:8000/api/appointments?status=No-Show&sort_by=patient_name&sort_desc=false"
-curl.exe -X POST "http://localhost:8000/api/recommendations/9/generate" -H "Content-Type: application/json" -d "{}"
-curl.exe -X POST "http://localhost:8000/api/followups" -H "Content-Type: application/json" -d "{\"appointment_id\":9,\"action\":\"Phone Call\",\"notes\":\"Offer a rescheduled appointment\"}"
-curl.exe "http://localhost:8000/api/appointments/stats"
+### Prerequisites
+
+Install the following:
+
+- Python 3.12 or later.
+- Node.js 18 or later.
+- npm.
+- Git.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/akkaprashanthi/meditrack-ai.git
+cd meditrack-ai
 ```
 
-## Database Structure
+### 2. Configure the Backend
 
-SQLite stores two tables:
-
-- `appointments`: patient identifier/name, date/time, clinician, department, appointment type, history features, original appointment status, follow-up status/action/notes, and timestamps.
-- `followups`: appointment foreign key, patient identifier, action, notes, status, follow-up date, and creation timestamp.
-
-On first startup, SQLAlchemy creates missing tables and the seed routine inserts 30 synthetic demonstration appointments only when the appointment table is empty. Follow-up writes persist in SQLite. In this prototype, SQLite is intended for a single backend instance; use a managed multi-instance database before scaling horizontally.
-
-## Caching
-
-`cachetools.TTLCache` defaults to a 60-second TTL and maximum size of 256 entries. Appointment list/detail, appointment statistics, and analytics responses are cached. Follow-up writes invalidate related appointment and analytics keys.
-
-Measured on the local FastAPI TestClient with 30 cold/warm pairs against `GET /api/appointments` using identical No-Show/date-sort parameters:
-
-- Median cold: 9.205 ms.
-- Median cached: 7.159 ms.
-- Observed median reduction: 22.23% (`(cold - cached) / cold`).
-- Cache counts: 30 misses and 30 hits.
-
-This is a small local measurement, not a production benchmark or latency guarantee. A follow-up write removed the list cache key; the next read produced a miss and returned the updated follow-up state.
-
-## Environment Variables
-
-Copy the example files and adjust values for your environment. Never commit actual `.env` files or secrets.
-
-Backend `backend/.env.example`:
-
-| Variable | Default/example | Purpose |
-|---|---|---|
-| `APP_PORT` | `8000` | Container startup port; the platform-provided `PORT` is used when `APP_PORT` is unset |
-| `DATABASE_URL` | `sqlite:///./meditrack.db` | SQLAlchemy URL; relative SQLite paths resolve from `backend/` |
-| `CACHE_TTL` | `60` | Cache lifetime in seconds |
-| `CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | Comma-separated allowed browser origins; set the deployed frontend origin in production |
-| `MODEL_ARTIFACT_DIR` | `ml/artifacts` | Default directory for generated ML artifacts |
-| `SYNTHETIC_DATASET_PATH` | `ml/artifacts/synthetic_dataset.csv` | Dataset path; generated if absent |
-| `MODEL_ARTIFACT_PATH` | `ml/artifacts/no_show_model.joblib` | Trained pipeline path; trained if absent |
-
-Relative artifact paths resolve from `backend/`. `frontend/.env.example` sets `VITE_API_BASE_URL=http://localhost:8000`; Vite embeds this value at build time. For a deployed frontend, set it to the public API origin before `npm run build`, and configure backend `CORS_ORIGINS` to include the frontend origin.
-
-## Local Installation and Execution
-
-Prerequisites: Python 3.12+, Node.js 18+, and npm.
-
-Backend, PowerShell:
+Open a terminal:
 
 ```powershell
-cd "C:\Users\Dell\OneDrive\Desktop\meditrack-ai\backend"
+cd backend
+
 py -3.12 -m venv .venv
+
 .\.venv\Scripts\Activate.ps1
+
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+
+pip install -r requirements.txt
+
 Copy-Item .env.example .env
+```
+
+Start the backend:
+
+```bash
 python -m uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
-At startup the backend creates the SQLite database and tables, seeds synthetic appointments if the database is empty, generates the dataset if missing, trains and saves a model if the ignored artifact is missing, then loads the model before accepting requests. First startup can take longer while the model is trained.
+Backend URL:
 
-Frontend, in another terminal:
+`http://localhost:8000`
+
+API documentation:
+
+`http://localhost:8000/docs`
+
+### 3. Configure the Frontend
+
+Open a separate terminal:
 
 ```powershell
-cd "C:\Users\Dell\OneDrive\Desktop\meditrack-ai\frontend"
+cd frontend
+
 npm ci
+
 Copy-Item .env.example .env
-npm run dev -- --host 127.0.0.1
 ```
 
-Open `http://localhost:5173`. The backend is at `http://localhost:8000`, and API docs are at `http://localhost:8000/docs`.
+Start the frontend:
 
-## Deployment
+```bash
+npm run dev
+```
 
-### Container backend
+Frontend URL:
 
-The root `Dockerfile` installs the pinned Python dependencies, copies backend source and the synthetic CSV if present, and starts Uvicorn. The model `.joblib` is intentionally excluded from the image. On first container startup, the backend creates it by training from the included CSV; if the CSV is absent, it generates that dataset first. Thus deployment does not require a checked-in model binary.
+`http://localhost:5173`
 
-Build and run locally:
+### 4. Startup Behavior
 
-```powershell
-cd "C:\Users\Dell\OneDrive\Desktop\meditrack-ai"
+During startup, the backend:
+
+1. Loads environment configuration.
+2. Initializes the SQLite database and creates missing tables.
+3. Inserts synthetic appointments if the database is empty.
+4. Generates the synthetic dataset if it is missing.
+5. Trains and saves the ML model if the model artifact is missing.
+6. Loads the trained model before accepting requests.
+
+The first startup may take longer because model training can occur automatically.
+
+## Environment Configuration
+
+Environment variables are configured through example files.
+
+### Backend: `backend/.env.example`
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `APP_PORT` | `8000` | Application port |
+| `DATABASE_URL` | `sqlite:///./meditrack.db` | Database connection URL |
+| `CACHE_TTL` | `60` | Cache lifetime in seconds |
+| `CORS_ORIGINS` | Local frontend origins | Allowed browser origins |
+| `MODEL_ARTIFACT_DIR` | `ml/artifacts` | Model artifact directory |
+| `SYNTHETIC_DATASET_PATH` | `ml/artifacts/synthetic_dataset.csv` | Synthetic dataset location |
+| `MODEL_ARTIFACT_PATH` | `ml/artifacts/no_show_model.joblib` | Trained model location |
+
+The platform-provided `PORT` is used when `APP_PORT` is not set. Relative SQLite and artifact paths resolve from the backend directory.
+
+### Frontend: `frontend/.env.example`
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+For deployment, configure `VITE_API_BASE_URL` with the deployed backend URL before building the frontend.
+
+Configure backend `CORS_ORIGINS` to include the exact deployed frontend origin.
+
+Never commit actual `.env` files, API keys, passwords, or other credentials.
+
+## Docker Deployment
+
+The root `Dockerfile` builds the backend container.
+
+The trained Joblib model is intentionally excluded from the image. If the model is missing at startup, the backend trains it using the included synthetic dataset. If the dataset is also missing, it generates the dataset first.
+
+Build the image:
+
+```bash
 docker build -t meditrack-ai-api .
-docker volume create meditrack-ai-data
-docker run --rm -p 8000:8000 `
-  -e CORS_ORIGINS="https://your-frontend.example" `
-  -v meditrack-ai-data:/data `
-  meditrack-ai-api
 ```
 
-The named `/data` volume persists SQLite records across container replacement. The image filesystem contains the generated model; a new image/container without a model trains it during startup. Persisting the model volume is optional because the artifact is reproducibly generated, but startup will be slower without it. Configure the hosting platform's persistent volume and health check as `/health`. Do not run multiple replicas with the included SQLite setup.
+Create a persistent volume:
 
-### Frontend hosting
+```bash
+docker volume create meditrack-ai-data
+```
 
-Build the static frontend on a static hosting provider after setting `VITE_API_BASE_URL` to the deployed API origin. Publish `frontend/dist/`, enable SPA fallback to `index.html`, and set the backend `CORS_ORIGINS` to the exact HTTPS frontend origin. Deployment has not been performed as part of this project audit.
+Run the container:
 
-## Tests and Verification
+```bash
+docker run --rm -p 8000:8000 -e CORS_ORIGINS="https://your-frontend.example" -v meditrack-ai-data:/data meditrack-ai-api
+```
 
-From `backend/`:
+The `/data` volume is used for persistent SQLite storage. Configure the hosting platform's persistent volume and use `/health` as the health-check endpoint.
 
-```powershell
+Do not run multiple backend replicas with the included SQLite configuration.
+
+### Frontend Deployment
+
+The frontend can be deployed using a static hosting provider.
+
+1. Set `VITE_API_BASE_URL` to the deployed backend URL.
+2. Run `npm run build` inside `frontend/`.
+3. Publish the generated `frontend/dist/` directory.
+4. Configure SPA fallback to `index.html`.
+5. Configure backend CORS to allow the deployed frontend origin.
+
+## Testing and Verification
+
+### Backend Tests
+
+Run from the `backend/` directory:
+
+```bash
 python -m pytest -q
 ```
 
-Latest verification: **15 backend tests passed**. Coverage includes appointment retrieval/filtering/sorting, follow-up persistence and cache invalidation, preprocessing, model loading/probability/threshold/input validation, recommendations, and cache behavior.
+Latest verification: **15 backend tests passed.**
 
-From `frontend/`:
+Test coverage includes:
 
-```powershell
+- Appointment retrieval, filtering, and sorting.
+- Follow-up creation and persistence.
+- Preservation of original appointment status.
+- Cache behavior and invalidation.
+- Missing-value preprocessing.
+- Model loading and prediction validation.
+- Recommendation generation.
+
+### Frontend Production Build
+
+Run from the `frontend/` directory:
+
+```bash
 npm ci
 npm run build
 ```
 
-Latest production build succeeded with exit code 0. Vite reports an advisory that the main minified JavaScript chunk exceeds 500 kB; it does not fail the build.
+The latest production build completed successfully.
 
-## Known Limitations and Future Improvements
+Vite reports an advisory that the main minified JavaScript bundle exceeds 500 kB. This does not prevent the production build from succeeding.
 
-- All patient/appointment records and ML labels are synthetic. Do not enter real protected health information.
-- The model's held-out results are weak and are not clinically validated. It must not be used for clinical decisions or as a substitute for staff judgment.
-- The synthetic target is a stochastic function of selected input features; it is not a model of measured clinical outcomes.
-- The rule-based recommendation service is deterministic and is not an autonomous agent or external LLM.
-- The prototype has no authentication, authorization, audit-grade event history, notification delivery integration, or production privacy/compliance controls.
-- SQLite is suitable for local demonstration and one backend instance, not concurrent horizontal scale.
-- Future work: authenticated roles, a managed database, real-world governed evaluation, model drift monitoring, notification integrations, audit logging, and frontend bundle splitting.
+## Known Limitations
 
+- The application uses synthetic patient and appointment records only.
+- The machine learning model has weak predictive performance and has not been clinically validated.
+- The synthetic target is generated from selected input features and does not represent measured clinical outcomes.
+- The recommendation engine uses deterministic business rules rather than an autonomous AI agent or external LLM.
+- The prototype does not include authentication, authorization, production privacy controls, or audit-grade event history.
+- Notification delivery is not integrated with external messaging services.
+- SQLite is intended for local demonstration and a single backend instance.
+- The cache benchmark is a local measurement, not a production performance guarantee.
+
+## Future Improvements
+
+- Integrate real-world, appropriately governed appointment datasets.
+- Improve model performance through larger datasets and systematic feature engineering.
+- Add model monitoring and drift detection.
+- Introduce role-based authentication and authorization.
+- Migrate to a managed database for production-scale usage.
+- Integrate SMS, email, and automated reminder services.
+- Add comprehensive audit logging.
+- Optimize frontend bundle size and introduce code splitting.
+- Expand integration and performance testing.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
