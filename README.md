@@ -212,12 +212,3 @@ Latest production build succeeded with exit code 0. Vite reports an advisory tha
 - SQLite is suitable for local demonstration and one backend instance, not concurrent horizontal scale.
 - Future work: authenticated roles, a managed database, real-world governed evaluation, model drift monitoring, notification integrations, audit logging, and frontend bundle splitting.
 
-## Git and Submission Hygiene
-
-The MediTrack AI project folder currently has no `.git` directory. The parent `C:\Users\Dell` folder does have a Git repository; do not run `git init`, `git add`, or other Git commands from that parent. To create a separate project repository, first review the project files and then run `git -C "C:\Users\Dell\OneDrive\Desktop\meditrack-ai" init` explicitly. This initializes Git only inside this project folder. Review `git status` from that repository and inspect staged files before any commit. Do not push without explicit confirmation.
-
-The project `.gitignore` excludes virtual environments, node modules, `.env` secrets, SQLite runtime files, generated model binaries, build output, caches, and temporary files. The synthetic CSV and source/configuration files remain includable. `.dockerignore` excludes local environments, secrets, databases, and generated model binaries from the image build context.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
