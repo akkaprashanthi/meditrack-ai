@@ -1,0 +1,1201 @@
+previous_appointments,previous_no_shows,previous_cancellations,days_since_last_visit,appointment_hour,appointment_day,appointment_type,department,reminder_sent,booking_lead_days,no_show
+1,4,0,80,14,4,Procedure,Pediatrics,True,23,1
+11,2,2,110,13,5,Follow-up,Dermatology,True,21,1
+9,4,2,28,10,4,Follow-up,Cardiology,True,4,0
+6,3,2,112,15,4,Consultation,Pediatrics,True,6,1
+6,3,1,166,14,3,Consultation,Primary Care,False,27,0
+12,4,3,25,15,1,Procedure,Cardiology,False,26,1
+1,2,1,59,12,1,New Patient,Cardiology,True,25,0
+10,3,2,125,16,5,Consultation,Orthopedics,True,7,1
+3,1,1,111,11,0,Follow-up,Cardiology,True,23,1
+1,4,0,121,16,0,New Patient,Pediatrics,True,3,1
+7,3,2,101,10,2,New Patient,Primary Care,True,7,0
+14,3,0,123,10,5,Consultation,Pediatrics,True,22,0
+11,2,3,110,13,4,Procedure,Dermatology,True,28,0
+11,4,2,14,13,4,Consultation,Dermatology,False,29,1
+10,0,1,135,15,3,Consultation,Pediatrics,True,44,0
+11,0,1,80,10,0,Consultation,Cardiology,True,38,0
+7,2,2,10,16,2,Procedure,Orthopedics,True,17,0
+1,3,1,74,11,0,Consultation,Neurology,True,35,0
+12,4,1,78,13,5,Follow-up,Pediatrics,True,5,0
+6,2,1,16,17,5,Consultation,Dermatology,True,38,0
+7,3,1,179,13,1,Follow-up,Pediatrics,True,18,0
+5,2,3,40,14,2,Procedure,Pediatrics,True,34,0
+2,4,0,60,17,2,Follow-up,Dermatology,True,43,1
+13,3,3,79,17,6,Follow-up,Neurology,True,31,0
+11,2,1,150,12,3,Procedure,Cardiology,True,41,1
+9,4,2,133,12,5,Procedure,Neurology,True,1,0
+6,0,0,139,9,3,Consultation,Dermatology,True,8,0
+12,4,1,43,13,4,New Patient,Cardiology,True,28,0
+8,0,3,152,17,3,New Patient,Orthopedics,False,24,1
+6,1,1,149,12,1,Procedure,Orthopedics,False,6,0
+6,4,0,84,11,6,Procedure,Cardiology,True,32,0
+3,3,2,98,9,4,Procedure,Dermatology,True,3,1
+1,4,0,7,11,5,Follow-up,Cardiology,True,44,0
+8,3,1,137,10,6,Follow-up,Pediatrics,False,7,0
+13,3,1,173,17,1,Follow-up,Neurology,True,20,0
+0,1,2,85,13,0,Consultation,Cardiology,False,37,0
+12,0,2,97,9,4,New Patient,Dermatology,True,23,1
+12,0,2,90,8,2,Follow-up,Primary Care,True,33,0
+4,1,3,15,16,3,Follow-up,Dermatology,True,31,0
+9,0,0,111,17,1,New Patient,Pediatrics,True,42,0
+2,2,1,130,15,2,Procedure,Neurology,False,21,1
+11,3,0,167,9,2,Procedure,Dermatology,True,44,0
+10,4,0,167,8,2,Consultation,Dermatology,True,23,1
+5,2,0,89,9,5,Follow-up,Cardiology,True,40,0
+1,4,2,172,15,4,Procedure,Pediatrics,True,33,0
+14,4,3,95,15,3,Follow-up,Neurology,True,6,1
+6,4,3,115,16,0,Consultation,Neurology,True,29,1
+13,2,2,108,8,3,New Patient,Cardiology,True,39,1
+10,1,3,179,9,1,Follow-up,Pediatrics,True,6,0
+11,4,0,133,17,2,Procedure,Dermatology,False,37,0
+11,1,3,22,17,2,Follow-up,Orthopedics,True,5,0
+2,2,3,13,15,0,Procedure,Primary Care,False,39,0
+5,0,0,74,9,2,New Patient,Pediatrics,False,35,0
+7,3,1,93,8,1,New Patient,Orthopedics,True,7,0
+7,3,3,120,8,5,Consultation,Primary Care,True,32,0
+0,0,1,87,14,6,Procedure,Dermatology,False,6,0
+8,1,3,93,16,0,New Patient,Primary Care,True,25,0
+2,2,3,165,14,4,Procedure,Orthopedics,True,41,0
+11,2,1,60,10,4,Consultation,Neurology,True,10,0
+10,4,0,89,15,2,Consultation,Dermatology,True,8,0
+13,1,1,100,8,3,Consultation,Pediatrics,True,19,0
+11,4,0,84,16,5,Consultation,Primary Care,False,17,0
+5,2,1,174,16,2,New Patient,Pediatrics,True,3,1
+14,4,2,173,15,0,New Patient,Cardiology,False,21,0
+6,1,1,92,16,2,Procedure,Neurology,True,12,0
+4,0,0,81,13,1,Procedure,Pediatrics,True,6,0
+13,0,1,106,12,2,New Patient,Neurology,True,13,0
+5,1,2,33,11,1,Follow-up,Pediatrics,True,1,0
+1,4,0,77,17,1,Follow-up,Pediatrics,True,41,1
+7,0,0,39,14,6,Procedure,Cardiology,True,44,0
+11,1,3,26,9,0,Follow-up,Orthopedics,True,17,0
+2,0,0,18,17,4,Consultation,Dermatology,True,39,0
+6,4,1,106,8,5,Procedure,Neurology,True,21,0
+1,3,0,1,13,4,New Patient,Neurology,True,41,0
+10,3,0,116,9,6,Consultation,Pediatrics,True,8,0
+7,3,1,78,14,0,Consultation,Primary Care,True,13,1
+4,3,2,66,12,2,Follow-up,Neurology,True,33,0
+3,3,0,138,12,1,New Patient,Orthopedics,True,10,0
+8,0,0,97,14,4,Procedure,Orthopedics,True,37,1
+10,4,0,132,15,4,Procedure,Orthopedics,True,19,0
+14,3,2,127,11,6,Procedure,Orthopedics,True,18,0
+6,3,3,6,17,2,Follow-up,Pediatrics,True,20,0
+2,1,0,39,12,1,Procedure,Primary Care,True,36,0
+12,4,1,103,9,6,Consultation,Pediatrics,True,1,0
+9,1,1,175,8,4,Consultation,Cardiology,False,34,0
+10,0,1,28,10,5,New Patient,Neurology,False,35,0
+1,4,0,19,14,3,Procedure,Neurology,True,37,0
+4,1,0,169,13,3,Consultation,Orthopedics,True,44,0
+11,0,2,174,11,2,Follow-up,Orthopedics,True,35,0
+12,3,1,30,12,5,Consultation,Pediatrics,False,24,0
+6,1,1,72,16,1,Procedure,Neurology,True,21,0
+12,4,1,113,13,6,New Patient,Dermatology,True,18,1
+12,2,3,35,8,1,Follow-up,Neurology,True,37,0
+5,0,2,59,8,3,Follow-up,Primary Care,True,18,0
+13,4,1,71,12,2,Consultation,Dermatology,True,26,0
+4,2,0,115,12,4,Follow-up,Cardiology,True,5,0
+3,1,3,56,16,4,Follow-up,Primary Care,True,14,0
+10,3,3,74,13,6,Consultation,Dermatology,True,12,1
+9,2,0,52,15,5,Follow-up,Orthopedics,False,20,0
+2,0,3,136,13,1,New Patient,Pediatrics,False,23,0
+12,3,2,28,11,1,New Patient,Dermatology,True,32,0
+2,2,0,42,14,6,Follow-up,Neurology,True,20,0
+12,3,3,45,14,3,New Patient,Dermatology,True,7,0
+0,4,0,163,15,0,Consultation,Cardiology,False,24,1
+11,3,0,170,9,5,New Patient,Cardiology,True,3,0
+11,3,0,90,14,4,Follow-up,Dermatology,True,38,0
+11,1,1,28,10,0,Procedure,Neurology,False,34,0
+9,1,2,136,15,5,Consultation,Orthopedics,True,10,0
+7,2,1,89,15,4,New Patient,Cardiology,True,12,0
+10,4,0,153,14,4,Follow-up,Primary Care,True,2,1
+4,2,0,65,17,6,New Patient,Pediatrics,True,17,0
+11,1,3,179,13,3,Consultation,Cardiology,True,2,0
+8,3,3,145,8,3,Procedure,Primary Care,True,42,0
+6,4,3,41,14,4,Consultation,Cardiology,False,6,0
+7,4,0,130,15,1,New Patient,Orthopedics,True,30,0
+8,1,3,52,9,1,Follow-up,Neurology,False,26,0
+0,3,2,63,9,5,Procedure,Orthopedics,False,11,0
+2,2,2,45,10,1,New Patient,Primary Care,True,36,0
+3,2,0,123,16,3,Procedure,Primary Care,False,5,0
+1,1,3,48,13,1,Consultation,Dermatology,True,40,0
+6,0,1,115,17,1,Consultation,Orthopedics,True,33,0
+10,1,0,105,16,4,Consultation,Primary Care,True,28,0
+9,2,0,135,13,5,New Patient,Pediatrics,True,39,0
+7,4,1,178,14,3,New Patient,Primary Care,False,18,1
+12,4,0,2,11,0,Follow-up,Neurology,True,13,0
+8,0,1,178,8,1,New Patient,Dermatology,True,7,0
+1,3,1,20,11,1,Consultation,Orthopedics,True,41,1
+11,0,3,95,13,6,Procedure,Pediatrics,True,18,0
+8,3,0,62,9,2,Follow-up,Primary Care,True,37,0
+9,1,2,115,10,2,Consultation,Pediatrics,True,15,0
+8,2,3,130,8,0,Follow-up,Pediatrics,False,43,0
+8,3,3,154,15,3,Follow-up,Orthopedics,True,39,0
+1,2,3,72,16,6,Follow-up,Dermatology,False,14,0
+8,4,0,167,16,2,Consultation,Neurology,True,22,0
+11,2,3,58,11,4,Follow-up,Neurology,True,35,1
+4,4,3,37,13,1,Consultation,Pediatrics,True,10,0
+9,3,1,68,17,1,New Patient,Orthopedics,True,2,1
+0,1,1,95,13,5,Follow-up,Pediatrics,False,13,0
+5,3,2,120,10,0,Consultation,Cardiology,True,26,0
+6,2,1,150,11,3,Procedure,Pediatrics,True,7,0
+14,2,1,41,15,2,New Patient,Orthopedics,False,15,0
+3,0,3,55,12,0,Follow-up,Primary Care,True,41,0
+4,0,3,169,16,3,New Patient,Neurology,True,4,1
+6,2,1,79,16,6,Procedure,Neurology,False,3,1
+14,0,3,44,8,0,Procedure,Cardiology,True,19,1
+12,4,1,177,15,5,Follow-up,Pediatrics,False,1,1
+0,4,3,81,11,3,Consultation,Pediatrics,True,2,0
+3,3,2,177,13,5,Follow-up,Primary Care,False,9,0
+12,3,1,165,10,0,New Patient,Cardiology,True,5,0
+0,2,0,163,11,6,New Patient,Dermatology,True,36,0
+12,0,2,105,11,0,New Patient,Primary Care,True,6,1
+4,1,1,143,8,6,New Patient,Cardiology,False,24,0
+13,2,0,172,15,4,Follow-up,Orthopedics,True,32,0
+4,4,0,49,9,2,Follow-up,Neurology,False,28,0
+6,1,3,7,11,0,New Patient,Primary Care,True,29,0
+9,2,0,58,9,4,Procedure,Primary Care,True,16,1
+1,1,3,115,9,0,Follow-up,Primary Care,False,40,0
+8,0,3,98,11,4,Follow-up,Dermatology,True,4,0
+7,0,0,15,17,5,New Patient,Orthopedics,True,5,0
+11,1,2,101,17,1,Consultation,Pediatrics,True,38,0
+14,0,2,32,11,1,Consultation,Primary Care,True,4,1
+9,0,1,91,13,1,Procedure,Cardiology,True,9,0
+6,1,2,104,17,1,Consultation,Primary Care,True,8,0
+6,1,1,114,10,0,Consultation,Neurology,True,2,0
+6,2,1,74,17,1,New Patient,Cardiology,True,6,0
+12,0,1,74,9,4,Follow-up,Orthopedics,True,26,0
+4,1,3,122,10,2,Procedure,Pediatrics,True,30,0
+2,2,2,135,11,5,Follow-up,Cardiology,True,4,0
+5,4,1,145,8,5,Consultation,Cardiology,True,42,0
+0,3,3,60,16,5,Consultation,Primary Care,True,5,0
+1,4,3,76,16,3,New Patient,Primary Care,True,31,0
+1,1,3,60,11,2,Consultation,Cardiology,True,36,0
+11,2,2,95,16,6,Procedure,Primary Care,True,23,0
+10,2,1,23,15,1,Follow-up,Primary Care,False,22,0
+10,4,3,77,16,3,Follow-up,Primary Care,True,5,0
+6,4,1,34,16,3,New Patient,Dermatology,True,11,0
+10,4,1,96,13,5,Procedure,Orthopedics,True,38,0
+2,3,1,153,9,3,Procedure,Primary Care,True,16,0
+13,2,3,177,17,5,Follow-up,Primary Care,False,2,0
+7,2,2,80,14,6,Follow-up,Orthopedics,False,33,0
+14,4,1,11,17,2,Procedure,Dermatology,False,31,0
+2,1,1,41,17,6,Consultation,Cardiology,True,3,0
+7,1,1,19,9,1,Consultation,Dermatology,True,3,0
+10,4,2,136,12,6,Procedure,Cardiology,True,6,1
+7,1,1,177,9,1,Procedure,Dermatology,True,3,0
+6,1,2,100,8,5,Consultation,Cardiology,True,28,0
+2,2,1,32,17,2,New Patient,Pediatrics,True,6,0
+5,1,1,4,17,6,Procedure,Orthopedics,True,27,0
+3,4,3,175,17,0,Consultation,Orthopedics,False,8,0
+4,4,1,57,16,3,New Patient,Pediatrics,True,43,0
+10,1,0,21,14,6,New Patient,Neurology,True,32,0
+9,2,1,32,13,0,Follow-up,Neurology,False,17,0
+9,4,2,46,17,1,Follow-up,Dermatology,True,19,0
+5,3,0,118,13,0,Follow-up,Neurology,True,3,0
+14,1,1,160,14,2,Procedure,Dermatology,True,3,0
+1,2,0,50,10,2,Consultation,Orthopedics,True,24,0
+5,3,2,124,15,4,Follow-up,Primary Care,True,2,0
+1,3,2,12,16,1,Consultation,Orthopedics,True,29,0
+5,0,3,2,14,1,Consultation,Dermatology,True,17,0
+14,1,1,10,12,1,Follow-up,Pediatrics,True,7,0
+5,4,3,166,9,6,Procedure,Pediatrics,True,24,0
+13,1,0,105,8,6,New Patient,Neurology,True,25,0
+7,1,3,145,14,1,Consultation,Dermatology,False,33,0
+10,1,2,4,14,1,Consultation,Pediatrics,True,9,0
+6,0,3,4,15,0,Follow-up,Dermatology,True,25,0
+3,0,3,152,17,6,Procedure,Primary Care,True,38,0
+11,1,2,19,12,4,New Patient,Dermatology,False,12,0
+14,4,1,28,16,5,Procedure,Neurology,True,37,0
+3,0,2,93,15,2,Procedure,Pediatrics,True,32,0
+11,1,3,109,10,4,Consultation,Cardiology,True,19,0
+3,0,3,41,16,0,Consultation,Dermatology,True,39,0
+10,2,3,80,8,4,Consultation,Cardiology,True,43,0
+11,1,0,121,13,4,Procedure,Neurology,True,11,0
+6,3,2,80,17,2,Follow-up,Orthopedics,False,44,1
+11,2,0,69,14,4,Consultation,Dermatology,True,1,0
+4,3,2,13,17,4,Procedure,Neurology,True,6,0
+1,3,3,81,8,3,New Patient,Pediatrics,True,2,0
+1,2,0,144,13,1,Follow-up,Primary Care,True,17,1
+6,4,2,113,15,0,New Patient,Cardiology,True,42,1
+13,2,3,160,14,6,Procedure,Orthopedics,True,27,0
+1,4,3,23,16,1,Procedure,Cardiology,False,28,0
+6,4,1,2,12,2,New Patient,Orthopedics,False,4,0
+10,2,0,99,14,4,Consultation,Primary Care,False,23,0
+3,3,3,32,12,1,New Patient,Pediatrics,True,17,1
+10,1,3,107,16,2,New Patient,Dermatology,True,22,0
+4,4,2,162,9,4,New Patient,Dermatology,True,12,0
+12,3,3,61,10,4,Procedure,Pediatrics,True,9,1
+8,4,0,99,8,4,New Patient,Pediatrics,True,42,0
+8,1,2,123,15,0,New Patient,Dermatology,True,25,0
+2,3,0,27,10,3,New Patient,Cardiology,True,19,0
+6,2,3,161,11,3,New Patient,Neurology,True,4,0
+12,0,2,37,16,4,New Patient,Orthopedics,False,34,0
+0,0,3,145,11,1,Follow-up,Neurology,True,21,0
+11,2,2,119,9,1,Procedure,Primary Care,True,18,0
+7,1,0,26,8,5,Follow-up,Pediatrics,True,30,0
+10,0,0,130,10,4,New Patient,Pediatrics,True,6,0
+9,2,1,36,17,5,New Patient,Cardiology,False,24,1
+6,3,2,108,13,1,New Patient,Primary Care,True,38,0
+4,1,0,172,17,6,Procedure,Pediatrics,False,21,0
+9,4,3,171,10,1,Follow-up,Neurology,False,1,0
+2,3,0,156,11,4,Consultation,Orthopedics,True,11,0
+8,2,1,89,9,1,Procedure,Pediatrics,True,3,0
+1,4,0,101,11,6,Procedure,Primary Care,True,23,0
+9,2,1,54,13,2,Procedure,Orthopedics,True,17,0
+9,0,1,165,16,5,Procedure,Cardiology,True,6,0
+1,0,0,86,11,2,New Patient,Orthopedics,False,31,1
+11,4,2,139,15,5,Consultation,Pediatrics,True,8,1
+6,4,3,65,14,3,Follow-up,Cardiology,False,16,0
+11,3,3,133,10,0,Procedure,Pediatrics,True,44,1
+0,0,1,41,17,1,New Patient,Dermatology,False,3,0
+2,1,3,132,12,4,New Patient,Primary Care,True,11,0
+7,0,3,9,9,1,New Patient,Orthopedics,True,14,0
+2,0,3,19,17,1,New Patient,Dermatology,True,23,0
+4,1,1,64,17,3,New Patient,Cardiology,True,11,0
+9,2,3,87,8,1,Procedure,Cardiology,False,43,1
+2,0,2,128,17,0,Consultation,Pediatrics,True,1,0
+10,4,0,65,17,4,Procedure,Neurology,True,42,0
+1,2,1,4,16,4,Procedure,Primary Care,True,24,0
+2,1,2,59,10,5,Consultation,Dermatology,True,2,0
+8,2,0,79,14,6,New Patient,Primary Care,True,6,1
+11,3,1,98,13,0,Procedure,Primary Care,True,5,0
+2,1,3,116,14,2,New Patient,Cardiology,True,13,0
+4,0,0,45,14,1,Consultation,Orthopedics,True,15,0
+13,0,1,110,14,6,New Patient,Primary Care,True,29,0
+14,4,0,114,13,3,Follow-up,Dermatology,False,14,0
+8,0,2,140,14,0,Procedure,Cardiology,True,32,0
+6,3,0,94,13,4,Procedure,Primary Care,True,13,0
+5,1,3,146,8,0,Procedure,Neurology,True,12,1
+9,3,0,40,8,1,New Patient,Cardiology,True,13,0
+8,0,3,128,17,5,Consultation,Primary Care,True,15,0
+4,4,3,9,17,3,Procedure,Pediatrics,True,37,0
+0,3,3,19,13,5,New Patient,Cardiology,True,11,0
+2,2,3,155,9,3,Consultation,Dermatology,True,13,0
+14,1,0,86,15,5,Follow-up,Cardiology,True,43,0
+6,4,3,112,9,3,Follow-up,Primary Care,False,29,1
+7,1,2,109,11,0,Procedure,Cardiology,True,9,0
+7,2,3,125,11,0,New Patient,Pediatrics,True,39,1
+11,1,3,44,8,5,New Patient,Orthopedics,True,9,0
+0,1,2,32,16,0,New Patient,Orthopedics,True,8,0
+1,2,1,8,13,2,Follow-up,Pediatrics,True,20,1
+4,0,0,155,11,0,Procedure,Primary Care,True,31,1
+7,0,0,41,13,2,Consultation,Cardiology,True,9,0
+10,1,1,103,8,4,Follow-up,Cardiology,True,34,0
+7,0,3,82,12,1,Consultation,Cardiology,True,7,0
+6,2,2,30,13,3,Consultation,Pediatrics,False,35,0
+14,4,1,75,11,6,New Patient,Orthopedics,True,5,0
+2,0,0,15,16,0,New Patient,Cardiology,False,21,0
+8,0,2,32,10,0,Procedure,Dermatology,True,29,0
+8,0,2,26,9,1,Consultation,Orthopedics,False,12,0
+7,2,3,148,13,5,Consultation,Pediatrics,True,27,0
+12,1,2,102,16,2,Consultation,Neurology,True,31,0
+4,2,2,166,11,4,Procedure,Primary Care,False,29,0
+14,0,3,79,8,0,Consultation,Primary Care,True,18,1
+4,1,1,37,17,5,Follow-up,Pediatrics,True,35,0
+8,2,3,109,12,0,New Patient,Neurology,False,33,1
+7,2,1,167,9,4,New Patient,Primary Care,True,15,1
+12,2,0,96,14,1,New Patient,Pediatrics,True,33,0
+6,3,1,4,11,6,Follow-up,Orthopedics,True,41,1
+4,2,0,55,17,2,Procedure,Neurology,False,36,0
+0,4,0,166,10,1,Consultation,Pediatrics,False,33,0
+5,2,3,93,13,2,New Patient,Orthopedics,True,34,0
+12,1,3,171,13,0,Consultation,Dermatology,True,36,0
+0,1,0,92,10,1,Procedure,Primary Care,True,13,0
+13,1,3,3,12,4,Procedure,Cardiology,True,32,0
+8,2,0,157,9,2,New Patient,Pediatrics,False,9,0
+2,1,1,137,14,2,Follow-up,Orthopedics,True,16,0
+4,4,2,129,15,5,Consultation,Orthopedics,True,42,0
+8,2,1,174,17,0,New Patient,Cardiology,True,13,0
+4,4,2,36,11,2,Procedure,Neurology,True,38,0
+1,3,3,163,10,1,Follow-up,Primary Care,False,19,0
+9,1,0,42,13,3,Follow-up,Dermatology,True,10,0
+10,1,0,174,14,2,Follow-up,Pediatrics,True,5,0
+1,3,3,35,17,0,Follow-up,Primary Care,False,25,0
+4,1,2,99,8,0,Follow-up,Primary Care,False,20,0
+3,1,2,142,10,5,Follow-up,Orthopedics,True,23,0
+9,4,1,14,10,0,Follow-up,Dermatology,False,2,0
+10,2,1,12,10,5,Consultation,Pediatrics,True,12,0
+10,0,2,153,12,6,New Patient,Neurology,False,1,0
+14,2,2,11,16,3,Consultation,Orthopedics,True,14,0
+11,2,0,110,8,2,Consultation,Pediatrics,True,41,0
+4,4,2,168,16,5,Consultation,Pediatrics,True,7,0
+1,3,2,111,14,6,New Patient,Dermatology,True,31,0
+9,0,0,87,14,0,Follow-up,Pediatrics,True,1,0
+13,0,1,75,14,6,Follow-up,Orthopedics,True,25,0
+14,3,3,115,9,6,Follow-up,Primary Care,True,41,0
+3,0,2,103,15,0,Consultation,Orthopedics,True,16,0
+3,1,0,90,10,0,Follow-up,Primary Care,True,9,0
+0,0,0,28,13,5,Consultation,Primary Care,True,26,0
+2,0,2,119,14,0,New Patient,Primary Care,False,13,0
+8,4,1,133,14,4,Consultation,Pediatrics,False,40,0
+8,0,3,127,11,0,Follow-up,Orthopedics,True,38,0
+5,0,2,14,11,4,New Patient,Cardiology,True,29,0
+4,4,3,126,12,1,New Patient,Neurology,True,29,0
+12,0,0,131,8,0,Procedure,Neurology,True,27,0
+6,4,1,33,15,0,Consultation,Pediatrics,False,33,0
+12,0,0,152,8,1,Follow-up,Orthopedics,True,21,0
+14,0,2,94,12,3,Consultation,Neurology,True,43,0
+4,0,0,85,14,0,Procedure,Cardiology,True,16,0
+3,3,1,130,8,5,Follow-up,Pediatrics,True,1,1
+14,3,1,92,17,4,Procedure,Neurology,False,31,0
+9,2,0,98,11,2,Procedure,Cardiology,True,30,0
+4,1,0,56,8,6,New Patient,Dermatology,True,44,0
+9,0,2,167,14,4,Follow-up,Primary Care,True,18,0
+7,2,3,174,13,4,New Patient,Cardiology,False,19,0
+13,1,0,24,14,1,Follow-up,Neurology,True,25,0
+3,2,1,132,15,4,Procedure,Orthopedics,False,18,0
+14,3,0,5,12,3,Procedure,Cardiology,False,35,0
+14,4,3,67,16,6,New Patient,Cardiology,True,19,0
+2,2,1,174,11,3,Follow-up,Primary Care,False,35,0
+2,0,3,32,13,4,New Patient,Orthopedics,True,19,0
+7,1,0,68,9,2,Follow-up,Dermatology,True,10,0
+0,4,0,40,14,0,Follow-up,Dermatology,True,44,0
+4,2,2,131,10,0,Follow-up,Neurology,True,24,1
+6,3,2,84,14,6,Procedure,Pediatrics,True,32,0
+14,2,3,107,16,5,Procedure,Pediatrics,True,27,0
+14,0,3,169,16,2,Consultation,Dermatology,True,16,0
+2,4,3,94,17,4,New Patient,Pediatrics,True,43,0
+13,3,2,132,9,0,New Patient,Primary Care,True,17,0
+1,4,1,18,9,0,Consultation,Dermatology,True,44,0
+11,4,1,39,17,3,New Patient,Cardiology,True,19,0
+12,1,0,170,11,4,Procedure,Primary Care,False,1,0
+13,1,1,154,8,6,Consultation,Orthopedics,False,2,1
+3,1,1,118,10,5,Follow-up,Pediatrics,True,43,0
+13,4,0,68,16,1,New Patient,Dermatology,True,24,0
+1,2,0,36,11,5,Follow-up,Dermatology,True,18,1
+7,2,2,153,8,3,New Patient,Dermatology,False,36,0
+7,4,1,141,15,5,Follow-up,Dermatology,True,28,0
+4,3,3,44,9,1,Consultation,Neurology,False,30,1
+0,4,1,106,11,0,Follow-up,Cardiology,True,31,0
+11,4,3,111,8,0,Procedure,Primary Care,True,9,0
+5,0,2,86,14,6,Procedure,Orthopedics,True,4,0
+9,1,0,166,12,0,New Patient,Primary Care,True,33,0
+6,3,0,23,16,6,Consultation,Orthopedics,False,1,0
+5,4,2,47,11,5,New Patient,Dermatology,True,32,0
+13,0,2,18,10,1,Procedure,Orthopedics,True,6,0
+1,1,1,125,9,6,Consultation,Cardiology,True,12,1
+11,2,2,116,10,1,New Patient,Pediatrics,True,32,0
+11,3,3,177,12,1,Follow-up,Pediatrics,True,28,1
+5,0,1,98,8,4,Procedure,Cardiology,True,35,0
+3,3,0,27,12,2,Procedure,Orthopedics,True,27,0
+0,1,1,81,16,2,Consultation,Orthopedics,True,3,0
+14,1,3,16,15,1,Consultation,Dermatology,True,37,0
+14,2,3,121,14,4,Procedure,Cardiology,True,10,0
+3,2,3,121,16,0,Follow-up,Pediatrics,True,6,0
+0,3,3,154,15,1,Consultation,Dermatology,True,39,0
+1,1,0,61,14,3,Consultation,Orthopedics,False,9,0
+1,4,1,56,16,3,New Patient,Dermatology,True,24,0
+12,0,0,13,9,4,Consultation,Orthopedics,True,22,1
+13,4,0,75,16,1,Consultation,Cardiology,False,34,1
+2,0,3,86,10,4,Procedure,Neurology,True,2,1
+11,3,3,136,15,5,Consultation,Orthopedics,True,5,1
+2,1,0,135,17,2,Procedure,Neurology,True,19,0
+5,1,2,26,12,1,Procedure,Orthopedics,True,21,0
+8,0,2,52,8,3,Procedure,Dermatology,True,35,0
+10,3,0,92,11,4,Follow-up,Neurology,False,27,0
+13,0,3,60,12,0,New Patient,Pediatrics,False,7,0
+0,3,3,5,17,3,Procedure,Neurology,True,44,0
+2,3,2,152,17,1,Follow-up,Cardiology,True,21,0
+4,4,2,131,13,3,Consultation,Primary Care,False,43,0
+4,3,1,94,17,6,Follow-up,Pediatrics,True,44,0
+14,1,3,57,12,3,Consultation,Pediatrics,True,3,0
+11,3,1,151,12,5,Consultation,Pediatrics,True,23,0
+4,4,3,7,16,2,Follow-up,Pediatrics,True,19,0
+14,1,0,80,14,6,Consultation,Pediatrics,True,22,0
+7,0,0,144,13,5,Consultation,Orthopedics,True,14,0
+7,4,3,171,12,6,Follow-up,Cardiology,True,25,0
+6,0,1,46,15,5,Procedure,Orthopedics,True,22,0
+2,2,1,117,15,4,Consultation,Dermatology,False,9,1
+14,1,3,34,12,3,Follow-up,Pediatrics,True,13,1
+0,0,0,21,8,6,Consultation,Neurology,True,7,0
+2,3,2,64,9,5,Consultation,Primary Care,True,38,1
+3,0,1,159,9,2,Consultation,Orthopedics,True,30,0
+4,3,0,124,12,0,Follow-up,Orthopedics,False,18,1
+1,3,3,88,14,0,Procedure,Primary Care,False,18,0
+0,0,0,51,16,1,New Patient,Neurology,True,4,0
+10,0,0,26,10,0,Procedure,Neurology,True,13,0
+14,3,2,49,15,1,Procedure,Neurology,True,41,0
+1,2,3,28,14,0,New Patient,Primary Care,True,2,1
+4,0,0,34,8,6,Follow-up,Pediatrics,True,7,1
+7,4,2,124,11,0,New Patient,Cardiology,True,38,0
+13,1,2,24,11,4,New Patient,Neurology,True,23,0
+10,0,3,9,16,2,Procedure,Neurology,True,2,0
+11,4,0,98,17,1,New Patient,Orthopedics,True,22,0
+8,0,3,52,16,4,Consultation,Cardiology,True,33,0
+6,2,2,82,13,6,New Patient,Pediatrics,True,16,1
+2,4,3,26,12,5,Procedure,Pediatrics,True,17,0
+12,2,1,38,11,6,Consultation,Dermatology,True,28,0
+12,2,3,79,15,4,Consultation,Cardiology,True,27,0
+0,1,2,124,8,4,Procedure,Orthopedics,True,40,0
+10,0,0,75,10,1,Follow-up,Dermatology,True,11,0
+1,2,3,97,9,5,Follow-up,Primary Care,False,13,1
+11,4,3,94,12,5,Follow-up,Pediatrics,False,7,1
+12,0,1,49,10,1,New Patient,Primary Care,True,30,0
+1,4,2,51,9,2,Follow-up,Orthopedics,True,24,1
+6,2,1,77,11,4,Consultation,Primary Care,True,16,0
+1,2,2,6,16,0,Follow-up,Cardiology,True,31,0
+8,0,3,123,13,5,Consultation,Dermatology,True,17,1
+13,3,3,110,16,1,Procedure,Cardiology,True,9,0
+1,0,0,55,17,0,New Patient,Pediatrics,True,24,0
+5,1,3,67,17,2,New Patient,Orthopedics,True,20,0
+14,3,1,59,11,5,Procedure,Dermatology,True,18,0
+4,0,2,117,16,1,New Patient,Dermatology,True,20,0
+1,2,3,136,17,3,Follow-up,Orthopedics,True,41,1
+7,2,1,20,17,5,Procedure,Dermatology,True,10,0
+7,0,1,74,11,0,Consultation,Orthopedics,True,13,0
+9,1,1,3,10,5,Procedure,Orthopedics,True,25,0
+4,1,3,81,13,2,Procedure,Dermatology,True,3,0
+14,3,1,45,17,4,Consultation,Dermatology,True,7,0
+7,4,1,61,17,1,Procedure,Neurology,True,25,0
+4,4,1,82,13,0,Procedure,Orthopedics,False,23,0
+14,0,0,58,9,5,Follow-up,Dermatology,True,29,0
+13,0,1,71,12,5,Procedure,Neurology,True,5,0
+7,0,0,137,15,6,Follow-up,Orthopedics,True,38,0
+0,2,0,146,13,4,Follow-up,Dermatology,False,22,0
+8,0,2,2,11,3,Consultation,Orthopedics,False,7,0
+8,1,0,68,11,1,Follow-up,Cardiology,False,14,0
+2,4,2,152,8,2,New Patient,Cardiology,True,11,0
+9,4,3,95,10,4,New Patient,Dermatology,True,20,1
+12,4,2,37,14,2,Procedure,Dermatology,True,21,0
+1,1,1,107,10,3,Procedure,Cardiology,True,20,0
+10,3,0,26,17,1,Procedure,Primary Care,True,21,0
+2,3,3,4,8,3,Follow-up,Dermatology,True,40,1
+11,0,3,114,13,1,Follow-up,Pediatrics,True,43,0
+6,2,2,93,12,0,Procedure,Primary Care,False,22,1
+0,2,0,136,16,0,New Patient,Pediatrics,True,43,0
+14,1,0,62,16,3,Follow-up,Pediatrics,True,37,0
+2,3,1,153,13,2,Procedure,Cardiology,True,37,0
+8,3,0,76,14,0,Follow-up,Neurology,False,10,0
+2,2,3,133,14,3,Follow-up,Pediatrics,False,20,0
+13,3,0,18,13,1,Follow-up,Orthopedics,True,16,0
+11,3,1,18,9,0,Consultation,Cardiology,False,5,0
+12,2,3,141,12,0,Follow-up,Orthopedics,False,4,1
+6,1,3,150,10,3,Procedure,Pediatrics,False,28,0
+7,3,0,169,12,6,Procedure,Pediatrics,False,19,0
+9,3,1,59,14,1,New Patient,Neurology,True,37,0
+11,4,2,4,10,1,Consultation,Dermatology,False,30,0
+12,0,2,176,10,1,New Patient,Dermatology,True,4,0
+0,2,3,108,16,2,New Patient,Dermatology,True,37,0
+9,4,3,45,11,5,Follow-up,Neurology,True,22,1
+1,2,3,137,9,2,Follow-up,Dermatology,False,25,0
+4,4,0,162,15,4,Follow-up,Neurology,False,43,0
+12,0,0,51,15,6,Procedure,Cardiology,True,29,0
+3,0,2,138,16,6,New Patient,Dermatology,False,1,0
+11,3,0,141,15,3,Procedure,Dermatology,True,8,0
+6,1,1,90,17,4,Procedure,Cardiology,True,19,0
+3,2,0,114,13,6,Procedure,Primary Care,True,2,0
+5,2,3,49,10,5,Consultation,Pediatrics,False,8,0
+7,2,0,167,16,2,Procedure,Primary Care,True,35,0
+11,4,0,176,10,0,Consultation,Orthopedics,True,7,1
+9,0,0,176,10,0,New Patient,Cardiology,True,8,0
+13,3,0,132,16,6,New Patient,Primary Care,True,23,0
+13,4,2,8,16,3,Procedure,Neurology,True,5,0
+11,3,1,66,11,2,Follow-up,Pediatrics,False,12,0
+9,1,3,80,15,2,Procedure,Neurology,True,42,0
+4,0,1,172,17,1,Procedure,Neurology,False,28,0
+6,3,2,98,15,5,Procedure,Neurology,True,43,0
+1,2,2,96,8,4,Procedure,Dermatology,False,16,0
+5,0,2,27,14,6,Consultation,Orthopedics,True,28,0
+13,1,3,143,9,2,Consultation,Pediatrics,True,11,0
+6,4,0,61,16,3,Follow-up,Cardiology,True,17,1
+1,1,2,17,8,0,Procedure,Cardiology,True,8,0
+9,0,3,177,17,6,Follow-up,Primary Care,True,37,1
+14,3,3,35,9,3,Procedure,Orthopedics,False,9,0
+13,0,2,3,12,3,Follow-up,Primary Care,True,10,1
+4,4,2,14,10,2,New Patient,Orthopedics,True,21,0
+6,4,3,81,16,1,Follow-up,Orthopedics,True,19,1
+7,4,2,19,11,6,New Patient,Primary Care,False,14,0
+3,4,3,151,15,3,Follow-up,Orthopedics,True,16,0
+4,1,0,92,8,4,Follow-up,Dermatology,True,13,0
+3,1,1,58,12,0,Procedure,Orthopedics,True,41,0
+14,1,0,1,17,1,Follow-up,Dermatology,True,26,0
+11,2,0,86,17,5,Consultation,Neurology,True,41,0
+12,4,1,28,10,0,Follow-up,Pediatrics,True,44,0
+12,3,0,176,11,0,New Patient,Cardiology,True,29,0
+14,3,1,53,12,5,Consultation,Pediatrics,True,37,0
+1,4,1,86,13,2,Follow-up,Orthopedics,True,5,0
+13,3,2,4,13,1,Procedure,Dermatology,True,42,0
+0,1,3,24,9,3,Procedure,Cardiology,False,22,0
+7,2,3,38,15,1,Follow-up,Pediatrics,True,32,0
+8,2,1,10,10,0,Consultation,Pediatrics,True,11,0
+5,0,1,130,11,0,Consultation,Pediatrics,True,5,0
+2,3,3,170,16,0,Follow-up,Neurology,True,39,1
+2,3,0,177,14,1,New Patient,Orthopedics,False,20,0
+12,3,2,48,11,4,Consultation,Neurology,True,7,0
+4,2,1,142,17,2,New Patient,Neurology,True,29,0
+4,3,0,91,11,0,Procedure,Dermatology,True,3,0
+13,4,2,9,13,0,Consultation,Dermatology,True,20,0
+2,2,1,17,10,3,Follow-up,Primary Care,False,31,0
+13,2,0,99,9,5,Consultation,Orthopedics,True,32,0
+13,0,2,76,12,2,New Patient,Dermatology,True,20,0
+8,3,0,2,13,0,Procedure,Primary Care,False,17,0
+2,4,2,167,16,1,Follow-up,Cardiology,False,37,0
+2,3,0,131,11,3,Follow-up,Orthopedics,True,9,1
+4,4,1,90,16,1,Procedure,Cardiology,True,4,0
+8,4,3,177,14,6,Consultation,Neurology,True,7,0
+2,3,0,174,8,5,Follow-up,Orthopedics,False,36,0
+6,2,3,175,15,2,Consultation,Primary Care,True,21,1
+1,0,2,47,13,6,Procedure,Primary Care,True,2,0
+8,0,3,158,11,2,Procedure,Primary Care,False,8,0
+0,1,0,91,12,0,Follow-up,Dermatology,True,2,1
+10,2,2,130,11,6,Consultation,Cardiology,True,36,0
+0,3,3,154,14,6,Follow-up,Primary Care,True,21,0
+2,2,3,30,13,2,New Patient,Primary Care,False,3,0
+2,0,0,81,12,4,Consultation,Dermatology,True,10,0
+12,1,3,24,10,1,Consultation,Cardiology,True,28,0
+0,4,0,51,11,4,Consultation,Orthopedics,True,27,0
+6,4,2,75,12,4,New Patient,Cardiology,False,37,0
+8,1,1,154,12,4,Consultation,Cardiology,False,2,0
+7,4,2,155,11,3,Procedure,Primary Care,True,4,0
+10,3,2,70,13,4,New Patient,Neurology,True,2,0
+12,4,0,59,10,3,Procedure,Cardiology,False,18,0
+5,4,2,95,13,5,Follow-up,Orthopedics,False,32,0
+12,3,3,164,9,1,Consultation,Neurology,True,30,0
+4,1,1,175,12,3,Consultation,Orthopedics,True,10,0
+14,3,1,41,15,2,Consultation,Primary Care,False,29,0
+7,1,3,34,16,3,New Patient,Dermatology,False,29,0
+11,1,0,127,14,0,Consultation,Orthopedics,True,9,0
+13,3,1,54,15,2,Consultation,Pediatrics,True,33,0
+11,2,2,36,8,6,New Patient,Neurology,True,19,0
+12,2,1,6,11,0,Follow-up,Primary Care,False,3,0
+8,1,3,73,14,4,Follow-up,Neurology,True,18,0
+0,2,1,71,16,4,Procedure,Neurology,True,34,0
+7,0,3,101,13,3,Procedure,Primary Care,True,31,0
+2,3,0,36,16,0,New Patient,Orthopedics,False,12,0
+13,2,2,128,10,0,Follow-up,Primary Care,False,34,0
+3,4,2,122,9,1,Procedure,Pediatrics,False,18,0
+3,2,0,83,8,0,New Patient,Pediatrics,True,21,0
+3,2,0,33,13,0,Follow-up,Dermatology,False,4,0
+9,0,2,91,14,1,Follow-up,Neurology,False,44,0
+8,0,2,121,10,1,New Patient,Primary Care,True,37,1
+14,1,2,67,15,5,Consultation,Orthopedics,True,9,0
+6,1,0,48,15,4,Consultation,Dermatology,False,25,0
+4,1,2,91,11,0,Procedure,Dermatology,True,35,0
+0,1,3,64,10,4,New Patient,Pediatrics,True,23,0
+0,3,0,72,15,0,Consultation,Dermatology,True,10,0
+5,0,1,63,14,2,New Patient,Cardiology,True,43,1
+13,1,1,55,9,0,New Patient,Pediatrics,True,12,0
+7,0,3,129,10,0,New Patient,Dermatology,False,15,0
+13,1,1,83,12,0,Follow-up,Pediatrics,True,17,0
+1,3,1,84,13,3,Follow-up,Orthopedics,False,40,0
+1,0,2,117,9,3,Procedure,Primary Care,True,23,0
+12,1,0,65,17,2,Consultation,Orthopedics,True,32,0
+1,0,3,19,11,4,New Patient,Primary Care,False,40,0
+0,4,3,153,11,5,Procedure,Primary Care,True,41,0
+6,3,2,10,8,5,Follow-up,Dermatology,True,38,1
+13,1,2,103,16,4,Procedure,Primary Care,False,40,0
+10,0,2,48,10,3,Procedure,Pediatrics,True,42,0
+1,0,3,39,17,3,Procedure,Cardiology,True,44,0
+12,2,3,8,12,1,New Patient,Cardiology,True,29,0
+12,3,1,162,16,3,New Patient,Dermatology,False,6,0
+12,2,1,77,9,0,New Patient,Cardiology,True,5,0
+13,4,2,62,9,6,Procedure,Neurology,True,36,0
+3,1,0,133,16,2,Procedure,Primary Care,False,14,0
+14,1,3,7,16,5,Follow-up,Neurology,True,36,0
+4,2,3,102,13,6,Consultation,Cardiology,True,42,0
+12,1,2,89,8,3,Follow-up,Neurology,True,29,0
+8,4,1,100,17,6,New Patient,Dermatology,True,34,1
+11,0,1,23,11,3,Consultation,Primary Care,True,13,0
+9,2,1,171,17,0,Procedure,Cardiology,True,20,0
+9,2,2,43,16,0,Consultation,Pediatrics,True,43,0
+9,0,3,122,16,0,Follow-up,Neurology,True,36,0
+11,2,2,134,14,6,Consultation,Cardiology,True,9,0
+11,2,3,62,14,3,Procedure,Pediatrics,True,42,1
+2,1,3,24,13,2,New Patient,Neurology,True,22,0
+12,0,2,54,8,3,New Patient,Pediatrics,True,38,0
+8,0,1,145,11,1,Procedure,Orthopedics,False,23,0
+4,0,2,163,15,6,Consultation,Pediatrics,True,27,0
+7,2,1,168,16,6,Procedure,Neurology,True,8,1
+14,0,2,41,13,0,Consultation,Cardiology,True,15,0
+12,4,3,109,15,5,Follow-up,Cardiology,False,32,0
+12,1,1,28,8,2,Procedure,Neurology,True,38,0
+6,3,2,128,12,0,Procedure,Neurology,False,4,0
+11,3,0,75,13,6,Consultation,Pediatrics,True,4,0
+5,2,2,128,16,0,New Patient,Neurology,True,31,0
+10,4,1,123,11,1,Follow-up,Primary Care,False,20,0
+9,0,1,178,10,0,New Patient,Dermatology,True,38,1
+3,1,2,88,11,3,Procedure,Neurology,True,4,0
+3,1,0,62,9,4,Procedure,Pediatrics,False,16,0
+0,0,2,95,13,2,Procedure,Cardiology,True,2,0
+2,1,2,30,14,0,New Patient,Dermatology,True,32,0
+6,1,1,21,16,0,Consultation,Pediatrics,True,38,0
+7,3,0,93,17,6,Procedure,Orthopedics,True,7,0
+2,1,1,148,8,5,Consultation,Pediatrics,False,15,0
+6,4,0,96,10,6,Follow-up,Orthopedics,True,38,1
+9,3,1,140,11,3,New Patient,Primary Care,False,2,0
+3,4,2,32,10,3,New Patient,Primary Care,True,42,1
+5,0,0,81,16,5,Follow-up,Primary Care,False,40,1
+5,4,2,110,9,4,Follow-up,Cardiology,False,7,0
+7,3,0,63,8,3,Procedure,Orthopedics,False,7,0
+5,4,3,3,16,2,Follow-up,Cardiology,True,31,0
+11,1,2,14,17,3,Consultation,Dermatology,True,1,0
+4,4,1,167,10,0,Follow-up,Dermatology,True,23,1
+6,2,2,109,11,1,Follow-up,Orthopedics,True,3,1
+5,0,0,48,13,5,Procedure,Neurology,True,24,0
+2,2,0,47,13,6,New Patient,Primary Care,False,16,0
+10,0,3,8,17,0,Procedure,Dermatology,True,32,0
+3,4,3,170,12,0,Follow-up,Orthopedics,False,39,0
+4,1,0,20,8,0,Procedure,Pediatrics,True,22,0
+11,1,1,136,12,5,New Patient,Primary Care,False,29,0
+14,2,0,44,13,2,Follow-up,Dermatology,True,27,0
+10,2,1,61,13,2,Follow-up,Pediatrics,True,44,0
+13,0,1,50,13,0,Consultation,Cardiology,False,11,0
+12,4,1,148,17,6,New Patient,Orthopedics,False,11,0
+7,4,2,6,16,3,New Patient,Neurology,False,17,0
+11,3,0,64,10,5,Consultation,Primary Care,False,33,0
+4,3,3,51,11,4,Follow-up,Pediatrics,True,39,0
+6,2,2,49,14,0,Follow-up,Primary Care,False,13,0
+8,2,3,35,12,5,New Patient,Primary Care,True,5,0
+14,2,0,164,12,3,Consultation,Neurology,True,27,0
+12,0,2,68,9,4,Consultation,Pediatrics,True,27,0
+7,0,3,75,10,1,Follow-up,Cardiology,True,17,0
+9,1,0,69,15,5,Procedure,Orthopedics,True,9,0
+3,2,3,176,16,6,Consultation,Cardiology,False,38,0
+12,0,1,61,15,2,Procedure,Pediatrics,True,38,0
+8,0,3,62,11,0,Procedure,Primary Care,False,33,0
+7,4,1,59,9,5,New Patient,Pediatrics,True,26,1
+11,1,3,59,9,6,Consultation,Primary Care,True,12,0
+9,2,0,17,11,3,Consultation,Dermatology,True,18,0
+1,2,1,109,13,4,Consultation,Primary Care,True,4,0
+4,3,1,5,16,1,New Patient,Orthopedics,True,11,1
+2,3,0,41,16,0,Procedure,Pediatrics,True,20,0
+11,1,1,37,8,6,Procedure,Pediatrics,True,20,0
+0,4,1,53,15,3,New Patient,Orthopedics,True,4,0
+3,1,0,136,10,1,Procedure,Dermatology,False,43,1
+8,4,2,108,9,4,Consultation,Orthopedics,True,12,0
+10,2,2,178,13,0,Procedure,Orthopedics,False,23,1
+7,0,3,63,8,0,Procedure,Primary Care,False,21,0
+12,3,2,167,11,1,Consultation,Neurology,True,21,0
+13,0,0,9,13,3,Procedure,Orthopedics,True,38,0
+1,3,0,91,10,2,Follow-up,Orthopedics,True,33,0
+14,0,1,143,13,1,Consultation,Cardiology,True,39,0
+9,1,1,96,12,2,Follow-up,Cardiology,True,17,0
+9,3,0,168,15,2,Follow-up,Cardiology,False,12,1
+1,4,3,57,9,3,Follow-up,Orthopedics,True,19,0
+9,2,2,6,8,3,Follow-up,Neurology,True,25,0
+10,0,2,139,13,6,Procedure,Primary Care,True,15,0
+8,1,0,13,10,5,Follow-up,Pediatrics,True,21,0
+1,4,3,137,15,2,Follow-up,Cardiology,True,7,0
+7,3,0,132,8,6,New Patient,Cardiology,True,26,0
+14,0,1,152,13,3,Consultation,Neurology,False,32,0
+10,1,1,86,17,1,Follow-up,Primary Care,True,24,0
+2,1,3,161,8,2,Consultation,Cardiology,True,39,1
+14,0,1,31,11,5,New Patient,Dermatology,True,44,0
+14,4,0,78,16,5,Consultation,Cardiology,True,40,1
+2,3,1,22,13,2,New Patient,Neurology,False,5,0
+12,0,1,138,9,1,Consultation,Primary Care,False,39,0
+6,3,0,128,10,1,Follow-up,Pediatrics,False,15,0
+8,2,0,145,15,0,Procedure,Neurology,True,20,1
+6,0,0,137,16,4,New Patient,Cardiology,True,19,0
+11,2,1,56,11,3,Consultation,Neurology,False,13,0
+14,0,1,13,12,3,Consultation,Orthopedics,True,39,0
+11,1,1,167,15,4,New Patient,Dermatology,True,29,0
+13,4,2,89,9,5,Follow-up,Pediatrics,True,43,0
+14,3,0,17,10,5,Consultation,Primary Care,True,43,0
+1,0,3,166,15,0,Procedure,Dermatology,False,19,0
+3,4,3,178,9,4,Consultation,Dermatology,True,32,0
+10,2,0,80,15,6,New Patient,Cardiology,False,23,0
+8,4,1,138,12,5,New Patient,Pediatrics,True,22,1
+0,3,0,7,17,2,New Patient,Neurology,True,33,0
+1,1,1,17,8,2,Follow-up,Dermatology,True,31,0
+7,2,1,50,17,6,Consultation,Dermatology,True,41,0
+9,2,0,118,10,0,Follow-up,Cardiology,True,34,0
+2,3,0,24,8,3,Follow-up,Neurology,True,28,0
+2,1,1,7,15,0,New Patient,Pediatrics,True,41,0
+1,1,2,120,13,6,Procedure,Dermatology,False,5,0
+8,1,1,138,16,0,New Patient,Cardiology,True,34,0
+0,1,3,133,9,0,New Patient,Neurology,True,18,1
+8,0,1,144,8,2,Procedure,Pediatrics,True,20,0
+7,0,3,144,13,1,Consultation,Neurology,False,35,1
+6,4,0,108,16,3,Consultation,Dermatology,True,13,0
+10,0,2,93,12,2,Consultation,Cardiology,True,39,0
+7,4,3,154,15,2,Procedure,Pediatrics,True,22,0
+10,0,0,63,17,3,Consultation,Primary Care,True,16,0
+11,3,3,18,16,3,New Patient,Pediatrics,True,15,0
+13,1,1,135,13,6,Consultation,Orthopedics,True,19,0
+11,2,1,50,14,3,New Patient,Pediatrics,False,42,0
+7,1,2,176,13,3,Procedure,Neurology,True,5,0
+7,2,2,75,14,4,Consultation,Cardiology,True,23,0
+3,2,0,153,13,1,Consultation,Neurology,True,37,0
+8,2,3,8,13,4,Follow-up,Pediatrics,True,21,0
+2,1,2,119,12,6,Follow-up,Orthopedics,True,25,1
+13,2,3,81,14,2,Follow-up,Primary Care,True,16,1
+12,4,1,83,15,1,Procedure,Primary Care,True,6,0
+1,2,2,48,17,2,Consultation,Dermatology,True,29,0
+11,1,1,174,14,1,Consultation,Cardiology,True,41,0
+1,0,3,71,9,4,Procedure,Dermatology,False,23,0
+10,1,3,153,13,6,New Patient,Primary Care,True,20,0
+1,0,3,77,11,4,Follow-up,Pediatrics,True,6,0
+7,0,2,9,8,0,New Patient,Cardiology,False,42,0
+9,4,3,158,8,2,Follow-up,Cardiology,False,39,0
+10,0,1,34,13,4,Follow-up,Orthopedics,True,40,0
+6,2,1,49,17,2,Consultation,Orthopedics,False,16,0
+13,4,3,155,13,4,Follow-up,Primary Care,True,28,0
+11,4,0,160,12,4,Follow-up,Pediatrics,True,20,0
+3,0,2,165,8,2,Procedure,Dermatology,False,11,0
+10,0,0,77,14,4,Consultation,Cardiology,False,10,0
+10,1,2,136,8,2,Consultation,Orthopedics,True,17,0
+5,2,1,59,16,0,Follow-up,Orthopedics,True,25,0
+11,4,1,133,16,2,Consultation,Primary Care,True,6,1
+13,1,1,90,17,3,Consultation,Orthopedics,True,31,0
+12,0,1,10,10,0,Procedure,Orthopedics,False,21,0
+11,1,1,75,9,6,New Patient,Dermatology,True,39,0
+9,4,1,84,10,3,Procedure,Cardiology,True,13,0
+4,0,2,47,15,0,Consultation,Primary Care,True,3,1
+11,1,3,68,10,6,New Patient,Pediatrics,True,14,0
+5,0,2,90,16,5,Procedure,Cardiology,True,43,0
+7,0,2,9,9,0,Procedure,Pediatrics,False,15,0
+4,4,3,28,8,1,Consultation,Neurology,True,31,0
+4,0,3,138,10,2,Procedure,Neurology,True,38,0
+2,1,0,63,15,3,Consultation,Primary Care,True,13,0
+14,4,2,109,14,5,Procedure,Primary Care,True,29,1
+2,3,0,102,11,2,Consultation,Dermatology,True,9,1
+1,0,0,99,14,4,New Patient,Dermatology,True,16,0
+14,2,3,75,14,0,Consultation,Pediatrics,True,14,0
+8,4,0,87,13,4,Procedure,Primary Care,True,30,0
+6,2,3,148,13,6,Consultation,Cardiology,False,39,0
+11,2,3,173,9,3,Procedure,Primary Care,True,12,0
+5,2,3,46,10,3,Follow-up,Neurology,True,13,1
+1,3,2,120,13,2,New Patient,Orthopedics,True,37,0
+10,0,3,174,9,6,Procedure,Cardiology,True,21,0
+2,4,0,2,12,0,Follow-up,Pediatrics,False,23,0
+8,4,3,141,9,2,Consultation,Pediatrics,True,32,0
+14,0,0,89,15,0,Procedure,Orthopedics,True,7,0
+14,4,1,174,9,6,Follow-up,Pediatrics,True,39,0
+5,4,0,104,8,3,Consultation,Primary Care,False,17,1
+11,3,1,151,14,6,Procedure,Primary Care,True,29,1
+9,1,2,30,10,4,Consultation,Pediatrics,True,20,0
+7,2,1,26,11,3,Consultation,Primary Care,True,34,0
+2,4,3,166,11,3,Consultation,Pediatrics,True,27,0
+5,0,2,95,10,1,Follow-up,Pediatrics,False,8,0
+9,4,2,100,15,3,Consultation,Orthopedics,True,9,0
+14,4,3,31,14,4,Consultation,Pediatrics,True,39,0
+0,3,1,41,10,6,Follow-up,Cardiology,True,23,0
+10,1,1,147,14,3,Consultation,Orthopedics,False,13,0
+12,2,3,55,15,6,Consultation,Neurology,True,7,0
+14,0,2,105,13,6,Follow-up,Primary Care,True,6,1
+6,4,2,57,13,3,Consultation,Cardiology,False,41,1
+1,1,1,48,17,3,New Patient,Orthopedics,True,43,0
+4,0,0,30,12,0,Follow-up,Dermatology,False,18,0
+12,3,0,167,11,1,New Patient,Primary Care,False,9,0
+13,3,0,169,13,6,New Patient,Primary Care,True,19,0
+9,3,0,21,16,0,New Patient,Dermatology,True,7,0
+1,0,2,64,15,2,Procedure,Primary Care,True,25,0
+1,3,0,101,8,4,Follow-up,Neurology,True,28,1
+7,3,2,69,12,1,Procedure,Primary Care,True,44,1
+8,3,3,130,15,6,Consultation,Pediatrics,False,15,0
+0,4,3,47,10,4,New Patient,Cardiology,True,9,0
+10,1,1,11,17,0,Follow-up,Dermatology,True,6,0
+8,1,0,61,16,1,Consultation,Neurology,True,17,1
+0,4,3,108,16,5,Consultation,Dermatology,True,27,1
+1,2,0,33,8,6,Consultation,Cardiology,True,3,0
+6,2,2,147,13,6,Consultation,Primary Care,False,34,1
+10,1,2,3,13,5,Procedure,Primary Care,True,21,0
+12,3,0,13,14,0,Consultation,Neurology,True,35,0
+6,3,2,92,16,5,New Patient,Dermatology,True,21,0
+4,0,0,92,11,0,Follow-up,Dermatology,True,7,0
+14,2,0,53,13,0,Procedure,Primary Care,False,1,0
+6,4,3,47,14,4,Follow-up,Dermatology,True,25,0
+4,1,3,13,15,3,Consultation,Cardiology,True,24,0
+6,1,1,119,15,4,Consultation,Neurology,True,36,0
+0,4,3,68,11,5,Procedure,Neurology,True,39,0
+4,0,3,22,17,0,Procedure,Orthopedics,True,8,0
+7,1,3,72,8,3,Follow-up,Neurology,False,14,0
+13,2,0,168,12,5,Follow-up,Primary Care,False,10,0
+11,3,1,47,14,3,New Patient,Orthopedics,True,5,0
+11,0,2,161,8,3,New Patient,Primary Care,True,1,1
+8,2,3,47,12,3,Follow-up,Neurology,True,4,0
+1,0,3,34,13,6,Consultation,Orthopedics,True,24,0
+5,3,1,47,14,0,Follow-up,Neurology,True,7,0
+14,3,0,58,9,6,Procedure,Pediatrics,True,9,0
+0,2,3,22,10,5,Procedure,Pediatrics,True,6,0
+13,1,1,106,10,5,Consultation,Dermatology,True,32,0
+10,0,1,60,14,2,Consultation,Primary Care,True,28,1
+4,4,3,129,11,3,Follow-up,Primary Care,True,43,0
+11,3,2,88,13,2,New Patient,Primary Care,True,5,0
+12,1,1,80,15,1,Consultation,Dermatology,True,10,0
+0,2,0,85,15,6,Follow-up,Pediatrics,True,21,0
+1,3,1,28,9,3,Consultation,Cardiology,False,29,0
+9,3,3,128,17,5,Consultation,Cardiology,True,6,0
+14,2,1,19,9,0,Procedure,Primary Care,True,10,1
+0,1,2,130,8,5,Follow-up,Cardiology,True,19,1
+9,3,1,179,8,4,Follow-up,Primary Care,True,1,1
+2,3,3,137,10,6,New Patient,Neurology,True,18,0
+9,2,3,82,16,0,Consultation,Dermatology,True,34,0
+9,0,2,57,10,3,Consultation,Cardiology,True,24,0
+1,2,3,157,14,3,New Patient,Pediatrics,True,20,1
+10,3,2,47,12,3,Procedure,Pediatrics,False,22,0
+13,4,1,87,8,0,Consultation,Neurology,False,42,1
+12,2,2,138,12,3,Follow-up,Pediatrics,True,23,0
+0,1,3,166,8,2,Procedure,Dermatology,True,24,0
+3,2,3,165,12,4,Follow-up,Orthopedics,True,41,0
+3,0,0,16,13,1,Procedure,Dermatology,True,7,0
+6,0,2,161,13,3,Procedure,Orthopedics,True,5,0
+2,3,0,21,10,4,Follow-up,Cardiology,True,20,0
+12,4,2,105,15,0,New Patient,Neurology,True,15,1
+11,4,2,167,13,5,Follow-up,Orthopedics,True,9,0
+12,2,1,118,10,5,New Patient,Orthopedics,True,6,1
+2,0,3,170,12,0,Consultation,Neurology,True,39,0
+0,4,3,62,9,0,Follow-up,Orthopedics,True,28,1
+13,2,0,57,17,5,Procedure,Orthopedics,True,31,0
+4,1,0,59,15,1,New Patient,Dermatology,True,6,0
+9,4,0,64,10,6,Consultation,Dermatology,False,16,0
+13,3,3,123,14,3,New Patient,Orthopedics,False,28,0
+0,3,2,81,14,2,Consultation,Primary Care,True,24,1
+0,1,2,132,14,1,Follow-up,Pediatrics,True,31,1
+0,4,3,75,8,4,Follow-up,Orthopedics,True,30,0
+2,2,3,56,16,0,Follow-up,Primary Care,True,19,0
+0,2,0,35,17,2,New Patient,Primary Care,True,35,0
+12,3,0,99,17,2,Procedure,Orthopedics,True,12,0
+9,3,1,161,17,1,New Patient,Cardiology,True,4,0
+14,0,1,154,17,2,Follow-up,Orthopedics,False,41,0
+12,1,2,46,15,3,New Patient,Orthopedics,True,1,0
+14,1,0,86,8,4,Follow-up,Dermatology,True,13,0
+3,4,1,127,12,0,Procedure,Primary Care,True,6,0
+4,3,0,110,10,6,Procedure,Primary Care,True,11,0
+12,1,0,13,10,6,Procedure,Dermatology,True,18,0
+3,3,0,106,16,4,Procedure,Neurology,False,6,0
+0,3,0,7,16,6,Follow-up,Dermatology,False,21,0
+10,1,2,21,13,2,Procedure,Dermatology,True,41,0
+12,2,1,118,15,5,New Patient,Dermatology,False,7,0
+14,4,1,19,9,5,Follow-up,Neurology,True,41,0
+13,2,1,61,10,3,Procedure,Dermatology,True,19,0
+1,0,2,106,16,1,Consultation,Cardiology,True,27,1
+11,3,3,118,12,3,Follow-up,Neurology,True,20,0
+12,2,2,80,13,6,New Patient,Orthopedics,True,14,0
+10,2,2,17,12,6,Procedure,Dermatology,True,5,1
+12,3,2,144,10,3,Consultation,Orthopedics,True,27,1
+12,4,2,171,16,1,Procedure,Dermatology,False,41,1
+6,1,0,160,15,5,New Patient,Pediatrics,True,23,0
+0,2,3,134,14,0,Consultation,Orthopedics,False,27,0
+6,0,0,72,11,1,Consultation,Primary Care,True,29,0
+3,3,1,157,14,3,Follow-up,Cardiology,False,18,0
+1,2,2,88,17,6,Procedure,Primary Care,True,6,0
+1,1,1,25,14,2,Follow-up,Neurology,True,23,0
+10,3,0,153,12,3,New Patient,Cardiology,True,39,0
+7,2,3,58,10,2,New Patient,Pediatrics,False,14,0
+8,2,0,169,13,3,Procedure,Dermatology,True,39,0
+11,2,0,66,11,0,Follow-up,Dermatology,True,38,0
+8,1,3,156,14,4,Consultation,Primary Care,False,11,0
+9,0,2,97,8,4,New Patient,Dermatology,True,26,0
+1,4,0,84,9,2,New Patient,Orthopedics,False,33,0
+12,0,3,54,15,1,Follow-up,Dermatology,True,22,0
+6,1,3,150,11,5,Procedure,Cardiology,True,31,0
+2,3,0,11,12,1,New Patient,Cardiology,True,41,0
+12,0,1,84,13,0,Procedure,Cardiology,True,28,0
+11,3,1,67,12,0,Consultation,Neurology,True,37,0
+0,3,0,98,15,6,Procedure,Neurology,True,36,0
+2,3,0,46,10,2,New Patient,Cardiology,True,36,1
+0,1,0,119,15,0,New Patient,Neurology,False,38,0
+4,0,0,70,10,6,Follow-up,Dermatology,False,10,1
+1,4,1,34,11,1,Procedure,Orthopedics,True,1,0
+10,1,1,36,13,2,Follow-up,Primary Care,True,7,0
+7,4,0,125,16,0,Procedure,Pediatrics,True,11,0
+14,0,1,47,10,4,Consultation,Primary Care,False,31,1
+11,0,0,55,13,4,Follow-up,Dermatology,False,23,0
+9,3,3,113,8,5,Follow-up,Dermatology,True,21,0
+7,4,0,60,8,1,Follow-up,Pediatrics,True,1,0
+0,4,3,70,15,2,Follow-up,Dermatology,False,31,0
+1,3,2,44,15,6,Consultation,Primary Care,False,17,0
+9,1,3,62,11,5,Procedure,Neurology,True,34,1
+0,4,2,125,14,0,Follow-up,Dermatology,False,5,0
+0,3,1,96,11,4,New Patient,Primary Care,True,13,0
+3,0,2,179,10,5,Consultation,Orthopedics,True,3,1
+13,0,1,139,12,3,Procedure,Pediatrics,False,13,0
+6,4,0,4,11,4,Consultation,Neurology,True,41,0
+10,1,1,68,16,0,Procedure,Cardiology,True,22,0
+6,3,1,52,12,0,Follow-up,Pediatrics,False,20,0
+2,0,0,106,11,0,Follow-up,Cardiology,False,13,0
+5,1,0,48,13,1,Procedure,Orthopedics,True,12,0
+1,1,3,173,15,6,New Patient,Neurology,True,30,0
+11,1,2,54,10,4,Follow-up,Pediatrics,False,44,0
+2,3,1,94,17,5,New Patient,Primary Care,True,33,0
+5,4,3,23,12,2,Consultation,Neurology,False,33,1
+14,4,0,163,14,6,Follow-up,Primary Care,True,21,0
+8,3,1,164,17,1,Follow-up,Cardiology,True,5,0
+6,1,3,143,12,6,New Patient,Cardiology,True,32,0
+8,4,2,63,9,0,Consultation,Primary Care,False,36,0
+11,2,1,11,15,0,Follow-up,Orthopedics,False,23,0
+3,2,1,128,8,0,Follow-up,Neurology,True,5,0
+9,3,0,77,12,5,New Patient,Cardiology,True,32,1
+13,3,0,178,17,1,Follow-up,Dermatology,False,41,1
+8,4,0,125,12,3,New Patient,Pediatrics,True,10,0
+6,2,3,97,14,3,Procedure,Pediatrics,True,8,0
+2,3,2,177,13,5,Procedure,Primary Care,False,33,1
+3,3,1,144,10,2,New Patient,Neurology,False,15,1
+14,1,3,83,11,0,Consultation,Neurology,False,32,0
+8,1,0,4,13,2,Follow-up,Cardiology,True,31,0
+4,3,0,17,9,2,Procedure,Cardiology,True,12,0
+6,0,1,80,12,5,Consultation,Neurology,False,2,0
+8,1,3,101,12,5,Consultation,Orthopedics,True,25,1
+8,3,2,6,16,0,Consultation,Cardiology,True,18,1
+10,4,3,23,9,5,New Patient,Neurology,False,38,1
+3,2,0,127,16,0,Procedure,Orthopedics,True,16,0
+9,1,3,135,12,4,Follow-up,Pediatrics,False,11,1
+6,2,0,6,14,2,Procedure,Primary Care,True,38,0
+14,3,0,91,13,2,Procedure,Neurology,False,33,0
+2,2,2,15,10,3,New Patient,Neurology,True,28,0
+2,0,0,130,17,2,New Patient,Primary Care,True,42,0
+6,2,3,150,10,5,New Patient,Pediatrics,False,35,1
+7,2,3,156,8,6,Consultation,Dermatology,True,39,0
+10,3,2,108,15,5,New Patient,Pediatrics,True,36,0
+6,4,1,113,14,3,Follow-up,Cardiology,True,18,0
+13,4,0,166,16,3,Follow-up,Neurology,False,3,0
+7,3,2,110,12,3,Procedure,Dermatology,False,27,0
+1,1,2,80,8,5,Procedure,Primary Care,True,34,0
+1,2,3,136,8,3,Follow-up,Cardiology,True,44,0
+14,0,2,106,12,3,New Patient,Primary Care,True,30,0
+2,4,0,151,10,2,Consultation,Dermatology,False,26,1
+14,4,0,94,17,2,Consultation,Cardiology,False,26,1
+4,4,3,156,9,3,Consultation,Orthopedics,False,6,1
+1,1,0,9,16,4,New Patient,Pediatrics,True,1,0
+4,1,3,7,10,3,Follow-up,Cardiology,True,2,0
+9,4,0,18,9,5,Follow-up,Cardiology,False,40,0
+6,2,2,100,10,5,Procedure,Cardiology,False,35,0
+11,3,3,127,9,3,Follow-up,Neurology,True,12,0
+9,2,1,39,12,6,Procedure,Cardiology,True,19,0
+6,2,0,28,11,1,Consultation,Pediatrics,True,22,0
+9,3,3,155,13,6,Consultation,Cardiology,True,11,0
+14,4,0,135,13,2,New Patient,Pediatrics,True,19,0
+6,1,2,117,8,3,Follow-up,Primary Care,True,16,0
+2,4,3,88,9,1,Consultation,Pediatrics,True,31,0
+6,1,2,76,9,3,Follow-up,Primary Care,False,34,0
+12,2,0,4,9,2,Follow-up,Primary Care,False,5,1
+3,4,3,34,8,4,Follow-up,Cardiology,False,21,0
+14,4,0,161,11,0,Follow-up,Neurology,True,44,0
+8,4,2,61,13,5,Procedure,Pediatrics,True,39,0
+9,1,2,127,11,6,Consultation,Neurology,True,35,1
+4,4,1,126,11,3,Follow-up,Pediatrics,True,33,0
+13,4,1,56,12,3,Follow-up,Pediatrics,True,1,0
+0,4,0,37,13,4,Procedure,Primary Care,False,43,0
+4,0,3,124,11,1,New Patient,Dermatology,False,33,0
+6,3,0,17,10,5,New Patient,Neurology,False,40,0
+7,4,1,89,12,1,Follow-up,Cardiology,True,40,1
+7,3,2,159,8,4,Procedure,Dermatology,True,12,0
+2,1,2,128,12,2,Consultation,Dermatology,True,1,1
+3,3,2,137,17,5,Procedure,Neurology,True,29,0
+1,0,2,15,11,5,Consultation,Neurology,True,21,0
+8,2,2,36,9,1,Consultation,Primary Care,True,1,1
+5,3,3,50,15,4,Procedure,Pediatrics,False,12,1
+8,2,1,53,9,3,Consultation,Pediatrics,True,44,0
+8,3,3,35,9,2,Follow-up,Cardiology,False,16,0
+10,1,3,175,9,4,Consultation,Neurology,False,12,0
+8,3,3,30,16,6,Procedure,Pediatrics,True,29,1
+9,3,3,127,17,0,New Patient,Dermatology,False,30,0
+8,3,3,106,13,6,Procedure,Neurology,True,15,0
+9,1,0,110,14,5,New Patient,Pediatrics,False,38,0
+9,1,3,39,14,3,Follow-up,Pediatrics,False,26,1
+4,1,2,56,14,4,Consultation,Primary Care,False,8,0
+3,2,1,109,13,2,Consultation,Neurology,False,15,0
+11,2,2,54,17,0,Consultation,Neurology,True,38,0
+5,1,1,125,15,4,Consultation,Neurology,False,4,0
+8,2,2,8,8,5,Follow-up,Pediatrics,True,1,0
+2,1,3,14,11,1,Consultation,Neurology,True,29,0
+6,1,0,131,17,5,Procedure,Neurology,True,20,0
+7,3,1,111,12,5,Consultation,Dermatology,False,12,0
+9,4,3,8,10,5,Procedure,Neurology,True,21,0
+7,1,1,161,16,2,Follow-up,Dermatology,True,9,0
+5,4,3,1,14,2,Procedure,Orthopedics,False,17,0
+14,2,0,172,13,2,Procedure,Primary Care,True,11,0
+7,0,2,131,12,5,New Patient,Pediatrics,True,26,0
+12,1,3,177,9,6,Follow-up,Neurology,True,30,0
+11,0,3,170,11,2,Follow-up,Primary Care,True,41,0
+8,0,0,57,12,6,Procedure,Primary Care,False,3,0
+13,1,3,136,17,3,Procedure,Neurology,True,15,0
+1,2,1,38,11,2,Follow-up,Pediatrics,True,12,0
+13,3,1,85,9,0,Procedure,Neurology,False,26,0
+12,0,1,43,12,4,Follow-up,Primary Care,True,24,0
+7,4,2,88,17,4,Follow-up,Neurology,False,39,1
+11,1,2,157,12,6,Follow-up,Dermatology,True,41,0
+7,0,1,79,11,5,New Patient,Cardiology,False,35,0
+4,3,0,17,14,0,Procedure,Primary Care,True,9,0
+11,3,3,59,14,3,Consultation,Dermatology,True,2,0
+3,3,0,141,10,5,New Patient,Pediatrics,True,40,0
+4,0,0,94,17,3,Procedure,Cardiology,True,42,0
+7,0,2,101,13,3,Consultation,Orthopedics,True,12,0
+12,1,1,78,8,5,Procedure,Neurology,False,3,0
+5,2,2,53,12,4,Procedure,Neurology,True,30,0
+7,4,3,108,17,4,New Patient,Dermatology,True,26,0
+0,1,0,114,11,3,Follow-up,Cardiology,True,40,0
+1,0,1,161,13,1,Procedure,Neurology,True,26,0
+0,4,2,111,14,3,Follow-up,Neurology,True,34,0
+1,0,3,179,15,6,Follow-up,Pediatrics,False,35,0
+13,0,2,148,16,4,Procedure,Neurology,False,1,1
+12,2,1,15,9,4,New Patient,Dermatology,True,7,0
+12,2,2,71,13,0,New Patient,Dermatology,True,35,0
+0,3,3,69,13,6,New Patient,Orthopedics,True,8,1
+1,4,1,1,9,1,Procedure,Neurology,True,10,0
+4,4,3,33,14,6,Procedure,Primary Care,True,34,0
+8,1,3,137,9,3,Follow-up,Neurology,True,9,1
+5,4,1,64,12,6,New Patient,Orthopedics,False,7,0
+7,3,0,27,11,6,Follow-up,Cardiology,True,1,0
+2,0,3,52,9,5,Follow-up,Dermatology,True,21,0
+10,4,0,50,16,6,New Patient,Primary Care,True,29,0
+4,0,1,32,10,4,Procedure,Neurology,True,33,0
+0,2,0,19,10,5,Follow-up,Neurology,True,40,1
+11,3,2,137,16,1,New Patient,Orthopedics,True,29,1
+13,1,1,148,16,0,New Patient,Cardiology,False,34,0
+0,1,2,89,8,3,Follow-up,Orthopedics,True,10,0
+6,2,3,111,10,5,Procedure,Neurology,True,15,0
+12,4,3,165,15,5,Follow-up,Cardiology,True,14,0
+10,1,3,151,15,3,Procedure,Neurology,True,3,1
+12,3,0,6,17,3,New Patient,Neurology,True,43,0
+6,2,1,171,13,4,Procedure,Dermatology,True,11,0
+5,0,0,12,8,6,New Patient,Orthopedics,True,20,0
+10,3,3,5,16,5,Procedure,Pediatrics,True,16,0
+2,4,2,73,9,0,New Patient,Dermatology,False,2,0
+3,2,1,134,9,4,Follow-up,Primary Care,False,40,1
+9,0,2,15,14,2,Follow-up,Orthopedics,True,10,0
+10,0,2,53,14,5,Follow-up,Pediatrics,True,5,0
+1,2,1,48,8,3,New Patient,Cardiology,False,16,0
+7,2,1,72,9,6,Procedure,Pediatrics,False,7,0
+5,2,0,177,13,3,Consultation,Neurology,False,44,0
+7,1,1,60,10,4,Consultation,Pediatrics,True,9,0
+14,2,1,38,14,0,Procedure,Pediatrics,True,14,1
+1,1,3,22,12,6,New Patient,Dermatology,True,12,0
+14,3,3,36,13,1,Follow-up,Dermatology,False,2,0
+6,3,3,24,12,2,Procedure,Cardiology,True,1,0
+11,3,0,103,11,5,New Patient,Orthopedics,True,23,0
+6,0,3,76,11,6,Procedure,Pediatrics,True,11,1
+4,4,1,90,14,3,New Patient,Neurology,True,4,0
+11,0,1,149,13,3,Procedure,Cardiology,True,13,0
+10,4,3,104,13,0,Procedure,Dermatology,True,13,0
+2,0,3,28,13,6,New Patient,Neurology,True,19,0
+10,2,0,68,10,0,Procedure,Primary Care,False,44,0
+11,0,1,56,17,0,Consultation,Cardiology,True,14,0
+5,0,2,148,13,3,Follow-up,Neurology,True,32,0
+13,3,2,55,15,0,Consultation,Orthopedics,False,34,0
+9,3,1,25,16,1,Procedure,Dermatology,True,3,0
+5,0,2,132,17,4,Consultation,Primary Care,True,23,0
+0,4,3,77,14,4,Procedure,Primary Care,True,20,0
+10,1,0,18,15,2,Follow-up,Neurology,True,23,0
+3,1,2,124,12,5,Consultation,Pediatrics,True,8,1
+11,1,2,38,15,4,Consultation,Pediatrics,True,21,0
+7,2,3,156,11,1,Procedure,Pediatrics,True,6,0
+7,0,1,150,15,4,Consultation,Dermatology,True,42,0
+2,2,0,67,8,4,New Patient,Cardiology,True,26,0
+10,1,2,100,17,5,New Patient,Neurology,True,2,0
+2,0,2,102,10,1,Procedure,Cardiology,True,23,0
+6,1,1,117,14,1,Consultation,Dermatology,True,41,0
+12,3,3,13,8,2,New Patient,Orthopedics,True,33,0
+13,3,3,59,9,2,Procedure,Orthopedics,True,13,0
+14,1,0,31,17,6,Follow-up,Dermatology,True,40,0
+14,1,3,125,16,5,Consultation,Cardiology,False,9,0
+8,3,0,13,10,3,Procedure,Dermatology,False,11,0
+3,3,1,93,9,3,New Patient,Neurology,True,7,1
+12,4,0,131,16,6,Consultation,Pediatrics,True,41,0
+12,4,1,170,17,3,Consultation,Neurology,True,32,0
+14,4,3,52,9,1,Follow-up,Dermatology,True,23,0
+9,4,1,2,14,0,Procedure,Orthopedics,False,30,0
+2,2,2,130,10,2,Follow-up,Cardiology,True,12,0
+7,1,0,1,15,4,Follow-up,Dermatology,False,4,1
+6,1,2,12,12,3,Follow-up,Cardiology,True,38,0
+12,1,1,178,9,2,Consultation,Orthopedics,True,43,0
+5,3,2,155,11,3,Consultation,Neurology,False,2,1
+4,3,3,127,13,6,Consultation,Orthopedics,True,3,1
+1,4,2,150,15,6,Procedure,Orthopedics,False,25,0
+12,0,0,14,8,1,New Patient,Neurology,True,2,0
+11,2,1,16,17,0,Follow-up,Primary Care,False,32,0
+0,1,0,54,14,1,Consultation,Primary Care,True,42,0
+6,4,1,5,16,5,Follow-up,Cardiology,True,13,0
+7,1,0,160,17,3,New Patient,Primary Care,False,13,1
+7,0,2,11,9,6,Consultation,Dermatology,True,38,0
+13,2,1,98,8,4,Follow-up,Dermatology,True,16,0
+2,4,0,153,15,3,Procedure,Orthopedics,False,11,0
+4,4,0,132,9,1,Follow-up,Cardiology,True,4,0
+2,0,3,43,9,2,Follow-up,Neurology,False,37,0
+3,1,3,85,12,1,Follow-up,Dermatology,True,41,1
+13,0,3,99,17,3,Follow-up,Neurology,True,4,0
+14,1,0,138,15,1,Procedure,Pediatrics,True,36,0
+0,2,1,77,13,2,Procedure,Primary Care,True,8,0
+9,1,3,52,9,0,Consultation,Dermatology,False,7,0
+3,0,2,143,11,5,Consultation,Orthopedics,True,17,0
+2,2,0,159,14,6,Follow-up,Neurology,True,20,0
+4,0,0,88,9,3,New Patient,Neurology,True,38,0
+2,1,1,6,13,3,Consultation,Orthopedics,True,31,0
+7,0,3,90,8,6,Consultation,Primary Care,True,7,1
+14,0,0,160,11,3,Procedure,Neurology,False,26,0
+8,2,3,178,10,4,Follow-up,Cardiology,False,39,0
+10,4,2,72,14,2,Consultation,Primary Care,False,30,0
+7,3,3,27,17,3,Consultation,Primary Care,True,11,0
+0,0,3,103,9,3,Procedure,Dermatology,True,6,0
+1,0,1,149,15,4,Procedure,Orthopedics,True,20,0
+4,1,3,170,14,4,Procedure,Primary Care,False,21,1
+3,3,0,10,17,3,Follow-up,Orthopedics,True,16,0
+12,3,1,53,17,0,Procedure,Neurology,True,5,0
+12,4,0,86,9,6,New Patient,Primary Care,True,6,0
+12,1,0,18,15,6,Follow-up,Pediatrics,False,24,1
+9,0,0,159,13,1,Follow-up,Orthopedics,False,42,0
+8,0,0,21,9,2,Consultation,Cardiology,False,27,0
+9,0,0,120,10,6,Procedure,Neurology,True,20,0
+6,0,1,165,17,2,Consultation,Pediatrics,False,41,0
+10,4,0,123,13,5,Consultation,Dermatology,True,31,0
+11,1,0,137,11,5,Procedure,Orthopedics,True,32,0
+11,4,3,48,11,6,Consultation,Orthopedics,True,26,0
+9,2,0,149,16,0,New Patient,Cardiology,True,34,0
+0,2,0,75,10,3,Follow-up,Orthopedics,True,23,0
+10,2,0,11,9,3,Follow-up,Pediatrics,True,28,0
+5,4,0,66,13,5,Procedure,Dermatology,True,28,0
+11,0,2,63,17,1,Procedure,Orthopedics,True,34,1
+8,0,3,94,9,2,Follow-up,Pediatrics,False,40,0
+13,2,2,48,10,1,New Patient,Cardiology,True,13,0
+5,1,2,83,12,5,New Patient,Orthopedics,True,31,0
+13,2,0,77,9,6,Consultation,Dermatology,True,2,0
+12,3,3,59,14,0,Procedure,Neurology,False,24,0
+4,2,0,125,10,1,Follow-up,Orthopedics,True,40,0
+7,1,2,55,9,2,New Patient,Cardiology,True,29,0
+7,1,1,138,10,6,Follow-up,Cardiology,True,12,0
+11,3,3,45,17,3,Follow-up,Neurology,True,27,0
+10,1,1,155,17,1,Procedure,Primary Care,True,16,0
+12,2,2,66,13,2,New Patient,Cardiology,True,20,0
+5,2,1,8,12,4,Consultation,Pediatrics,True,11,0
+7,3,2,27,16,2,Procedure,Cardiology,True,28,0
+6,3,3,145,9,0,Follow-up,Neurology,True,9,0
+13,2,2,157,14,5,Procedure,Neurology,True,20,0
+4,1,1,38,14,2,Procedure,Neurology,True,42,0
+8,1,1,108,15,1,New Patient,Cardiology,True,34,0
+1,2,2,103,10,5,New Patient,Pediatrics,True,19,1
+12,1,1,24,15,5,Procedure,Dermatology,True,43,1
+5,3,0,81,14,1,Procedure,Pediatrics,True,1,0
+5,1,1,125,16,0,New Patient,Orthopedics,True,43,0
+8,3,0,174,9,0,Consultation,Orthopedics,True,16,0
+7,3,0,152,14,5,Procedure,Dermatology,True,37,0
+12,4,1,18,16,4,New Patient,Orthopedics,True,42,0
+7,0,3,43,10,5,Consultation,Primary Care,True,27,0
+7,3,3,79,15,4,New Patient,Primary Care,True,27,0
+1,0,1,27,8,2,Procedure,Primary Care,True,33,1
+0,1,1,103,15,4,Follow-up,Dermatology,False,11,0
+5,0,0,2,14,5,Follow-up,Orthopedics,True,8,0
+14,0,3,21,9,2,Follow-up,Neurology,True,16,0
+13,0,0,9,8,6,New Patient,Primary Care,False,22,0
+9,0,3,53,15,6,New Patient,Primary Care,True,33,1
+9,4,3,137,10,5,New Patient,Primary Care,True,12,1
+5,0,2,32,12,6,Procedure,Cardiology,True,25,1
+2,1,1,177,8,2,Consultation,Dermatology,False,1,0
+0,3,3,49,17,0,New Patient,Pediatrics,False,2,0
+5,4,2,9,13,3,Consultation,Pediatrics,True,43,0
+4,4,2,61,17,5,Consultation,Neurology,False,38,1
+2,0,3,134,9,5,Consultation,Cardiology,True,39,0
+3,4,3,20,10,2,New Patient,Cardiology,True,15,0
+0,3,0,13,14,2,Follow-up,Pediatrics,True,23,0
+9,0,3,153,14,3,Consultation,Neurology,True,30,0
+13,2,3,106,15,5,Consultation,Neurology,True,12,0
+10,4,0,62,17,0,Follow-up,Pediatrics,False,33,0
+6,1,1,136,16,2,Procedure,Cardiology,True,31,0
+6,0,3,152,9,1,New Patient,Pediatrics,True,18,0
+4,4,0,65,11,5,Procedure,Dermatology,True,20,0
+2,4,1,101,17,3,Procedure,Primary Care,True,14,0
+8,4,2,2,13,0,New Patient,Primary Care,True,36,0
+8,4,2,55,16,1,New Patient,Orthopedics,False,44,0
+0,4,3,107,13,0,Follow-up,Dermatology,True,44,1
+6,2,0,36,8,3,New Patient,Dermatology,True,34,0
+4,0,1,178,12,6,Procedure,Dermatology,True,16,0
+2,3,3,174,16,3,New Patient,Primary Care,False,35,1
+10,1,2,47,14,6,Consultation,Dermatology,False,11,0
+7,2,0,71,9,5,Consultation,Neurology,True,40,0
+9,3,1,34,10,6,New Patient,Neurology,True,12,0
+10,4,1,91,16,2,Procedure,Pediatrics,True,18,0
+14,1,2,23,17,6,Consultation,Primary Care,False,5,0
+12,1,1,70,15,1,New Patient,Orthopedics,False,4,0
+9,3,2,100,8,3,Consultation,Pediatrics,False,18,0

@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+**/.venv/
+**/venv/
+.env
+.env.*
+backend/.env
+frontend/.env
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.secret
+secrets/
+credentials/
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+
+# SQLite / local data
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite-journal
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.joblib
+*.pkl
+*.pickle
+backend/instance/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Test, tool, and temporary output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.hypothesis/
+.coverage
+htmlcov/
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Logs
+*.log
