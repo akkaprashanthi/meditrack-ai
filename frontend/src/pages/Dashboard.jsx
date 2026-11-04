@@ -110,7 +110,9 @@ export default function Dashboard() {
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
           <h3 className="mb-4 text-lg font-semibold text-slate-900">Recent no-show appointments</h3>
           <div className="space-y-3">
-            {recentNoShows.map((item) => (
+            {recentNoShows.length === 0 ? (
+              <p className="rounded-xl bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">There are no recent no-show appointments.</p>
+            ) : recentNoShows.map((item) => (
               <div key={item.id} className="flex items-center justify-between rounded-xl border border-slate-200 p-3">
                 <div>
                   <p className="font-medium text-slate-800">{item.patient_name}</p>

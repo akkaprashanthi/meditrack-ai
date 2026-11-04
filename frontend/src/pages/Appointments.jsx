@@ -5,6 +5,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import AppointmentTable from '../components/AppointmentTable';
 import AppointmentDetails from '../components/AppointmentDetails';
 import FollowUpModal from '../components/FollowUpModal';
+import { getFollowUpResultMessage, submitFollowUpAndRefresh } from '../services/followUpSubmission';
 
 const statusOptions = ['All', 'Scheduled', 'Completed', 'No-Show', 'Cancelled'];
 
@@ -14,12 +15,13 @@ export default function AppointmentsPage() {
   const [sortConfig, setSortConfig] = useState({ sort_by: 'appointment_date', sort_desc: false });
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [modalAppointment, setModalAppointment] = useState(null);
+  const [followUpNotice, setFollowUpNotice] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const fetchAppointments = async () => {
+  const fetchAppointments = async ({ showLoading = true, showError = true } = {}) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
       setError('');
       const params = {};
       if (filters.status && filters.status !== 'All') params.status = filters.status;
@@ -29,10 +31,12 @@ export default function AppointmentsPage() {
       params.sort_desc = sortConfig.sort_desc;
       const response = await api.get('/api/appointments', { params });
       setAppointments(response.data);
+      return true;
     } catch (err) {
-      setError(err.message || 'Unable to load appointments.');
+      if (showError) setError(err.message || 'Unable to load appointments. Please try again.');
+      return false;
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
     }
   };
 
@@ -94,14 +98,13 @@ export default function AppointmentsPage() {
   };
 
   const handleFollowUpSubmit = async (payload) => {
-    try {
-      await api.post('/api/followups', payload);
-      setModalAppointment(null);
-      await fetchAppointments();
-      window.alert('Follow-up saved successfully.');
-    } catch (err) {
-      window.alert(err.message || 'Unable to save follow-up.');
-    }
+    setFollowUpNotice('');
+    const result = await submitFollowUpAndRefresh({
+      submit: () => api.post('/api/followups', payload),
+      refresh: () => fetchAppointments({ showLoading: false, showError: false }),
+    });
+    setModalAppointment(null);
+    setFollowUpNotice(getFollowUpResultMessage(result.refreshSucceeded));
   };
 
   if (loading) return <Loading />;
@@ -140,12 +143,21 @@ export default function AppointmentsPage() {
         </div>
       </div>
 
+      {followUpNotice ? (
+        <p role="status" className={`rounded-lg border p-3 text-sm ${followUpNotice.startsWith('Follow-up saved successfully, but') ? 'border-amber-200 bg-amber-50 text-amber-800' : 'border-green-200 bg-green-50 text-green-800'}`}>
+          {followUpNotice}
+        </p>
+      ) : null}
+
       <div className="grid gap-6 xl:grid-cols-[1.7fr_0.8fr]">
         <AppointmentTable
           appointments={visibleAppointments}
           onSelect={setSelectedAppointment}
           onGenerateRecommendation={handleGenerateRecommendation}
-          onFollowUp={setModalAppointment}
+          onFollowUp={(appointment) => {
+            setFollowUpNotice('');
+            setModalAppointment(appointment);
+          }}
         />
         <AppointmentDetails appointment={selectedAppointment} />
       </div>
