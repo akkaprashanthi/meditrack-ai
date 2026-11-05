@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from database import Base
@@ -49,3 +49,20 @@ class FollowUp(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     appointment: Mapped[Appointment] = relationship("Appointment", back_populates="followups")
+
+
+class RecommendationCompletion(Base):
+    __tablename__ = "recommendation_completions"
+    __table_args__ = (
+        UniqueConstraint("appointment_id", "category", name="uq_recommendation_completion_appointment_category"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    appointment_id: Mapped[int] = mapped_column(ForeignKey("appointments.id", ondelete="CASCADE"), nullable=False, index=True)
+    category: Mapped[str] = mapped_column(String, nullable=False)
+    action_taken: Mapped[str] = mapped_column(String, nullable=False)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    status: Mapped[str] = mapped_column(String, default="Completed", nullable=False)
+    completed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

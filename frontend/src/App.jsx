@@ -6,6 +6,7 @@ import AppointmentsPage from './pages/Appointments';
 import RecommendationsPage from './pages/Recommendations';
 import FollowUpsPage from './pages/FollowUps';
 import AnalyticsPage from './pages/Analytics';
+import SettingsPage from './pages/Settings';
 
 export default function App() {
   return (
@@ -18,9 +19,10 @@ export default function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/appointments" element={<AppointmentsPage />} />
             <Route path="/recommendations" element={<RecommendationsPage />} />
+            <Route path="/recommendations/:appointmentId" element={<RecommendationsPage />} />
             <Route path="/followups" element={<FollowUpsPage />} />
             <Route path="/analytics" element={<AnalyticsPage />} />
-            <Route path="/settings" element={<Dashboard />} />
+            <Route path="/settings" element={<SettingsPage />} />
           </Routes>
         </main>
       </div>

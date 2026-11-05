@@ -28,6 +28,7 @@ export default function Sidebar() {
           <NavLink
             key={label}
             to={to}
+            end={to === '/'}
             className={({ isActive }) =>
               `flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition ${
                 isActive ? 'bg-slate-800 text-white shadow-soft' : 'text-slate-300 hover:bg-slate-800/70 hover:text-white'

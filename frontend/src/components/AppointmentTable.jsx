@@ -22,13 +22,15 @@ export default function AppointmentTable({ appointments, onSelect, onGenerateRec
               <th className="px-4 py-3 font-medium">Type</th>
               <th className="px-4 py-3 font-medium">Visits</th>
               <th className="px-4 py-3 font-medium">Status</th>
+              <th className="px-4 py-3 font-medium">Recommendation progress</th>
+              <th className="px-4 py-3 font-medium">Patient Outreach</th>
               <th className="px-4 py-3 font-medium">Action</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-sm text-slate-700">
             {appointments.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-4 py-10 text-center text-slate-500">
+                <td colSpan={10} className="px-4 py-10 text-center text-slate-500">
                   No appointments found.
                 </td>
               </tr>
@@ -57,13 +59,59 @@ export default function AppointmentTable({ appointments, onSelect, onGenerateRec
                     </span>
                   </td>
                   <td className="px-4 py-3">
+                    {appointment.status === 'No-Show' ? (
+                      <div className="min-w-36 space-y-1.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-xs font-medium text-slate-700">
+                            {appointment.recommendation_completion_count || 0}/{appointment.recommendation_completion_total || 3} Completed
+                          </span>
+                          <span className={`text-xs font-medium ${appointment.recommendation_progress_status === 'Completed' ? 'text-green-700' : appointment.recommendation_progress_status === 'In Progress' ? 'text-amber-700' : 'text-slate-500'}`}>
+                            {appointment.recommendation_progress_status || 'Pending'}
+                          </span>
+                        </div>
+                        <progress
+                          aria-label={`Recommendation completion for ${appointment.patient_name}`}
+                          value={appointment.recommendation_completion_count || 0}
+                          max={appointment.recommendation_completion_total || 3}
+                          className="h-1.5 w-full accent-green-600"
+                        />
+                      </div>
+                    ) : <span className="text-slate-400">—</span>}
+                  </td>
+                  <td className="px-4 py-3">
+                    {appointment.follow_up_recorded ? (
+                      <div className="min-w-36 space-y-1">
+                        <span className="inline-flex rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700">
+                          Recorded
+                        </span>
+                        <p className="text-xs font-medium text-slate-700">{appointment.latest_follow_up_action}</p>
+                        {appointment.latest_follow_up_date ? (
+                          <p className="text-xs text-slate-500">{new Date(appointment.latest_follow_up_date).toLocaleString()}</p>
+                        ) : null}
+                        {appointment.latest_follow_up_status ? (
+                          <p className="text-xs text-slate-500">{appointment.latest_follow_up_status}</p>
+                        ) : null}
+                        {appointment.latest_follow_up_notes ? (
+                          <details className="pt-1 text-xs">
+                            <summary className="cursor-pointer font-medium text-primary-700">View notes</summary>
+                            <p className="mt-1 max-w-56 whitespace-pre-wrap text-slate-600">{appointment.latest_follow_up_notes}</p>
+                          </details>
+                        ) : null}
+                      </div>
+                    ) : (
+                      <span className="inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
+                        Not Recorded
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3">
                     <div className="flex flex-wrap gap-2">
                       <button onClick={() => onSelect(appointment)} className="rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-xs hover:bg-slate-100">
                         View
                       </button>
                       {appointment.status === 'No-Show' ? (
                         <button onClick={() => onGenerateRecommendation(appointment.id)} className="rounded-lg bg-primary-600 px-2 py-1.5 text-xs text-white hover:bg-primary-700">
-                          AI rec
+                          View Recommendations
                         </button>
                       ) : null}
                       {appointment.status === 'No-Show' ? (

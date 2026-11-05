@@ -7,11 +7,12 @@ from sqlalchemy import desc, func
 from sqlalchemy.orm import Session
 
 from database import get_db
-from models import Appointment
+from models import Appointment, FollowUp, RecommendationCompletion
 from schemas import AppointmentOut
 from services.cache_service import cache_service
 
 router = APIRouter(prefix="/api/appointments", tags=["appointments"])
+RECOMMENDATION_TOTAL = 3
 
 
 def _serialize_appointment(appointment: Appointment) -> dict:
@@ -58,7 +59,65 @@ def list_appointments(
     query = query.order_by(ordering)
 
     appointments = query.all()
-    payload = [_serialize_appointment(item) for item in appointments]
+    completion_counts = dict(
+        db.query(
+            RecommendationCompletion.appointment_id,
+            func.count(RecommendationCompletion.id),
+        )
+        .filter(
+            RecommendationCompletion.status == "Completed",
+            RecommendationCompletion.appointment_id.in_([item.id for item in appointments]),
+        )
+        .group_by(RecommendationCompletion.appointment_id)
+        .all()
+    ) if appointments else {}
+
+    latest_followups = {}
+    if appointments:
+        ranked_followups = db.query(
+            FollowUp.id.label("follow_up_id"),
+            func.row_number().over(
+                partition_by=FollowUp.appointment_id,
+                order_by=(FollowUp.follow_up_date.desc(), FollowUp.id.desc()),
+            ).label("row_number"),
+        ).filter(
+            FollowUp.appointment_id.in_([item.id for item in appointments])
+        ).subquery()
+        latest_followups = {
+            followup.appointment_id: followup
+            for followup in db.query(FollowUp)
+            .join(ranked_followups, FollowUp.id == ranked_followups.c.follow_up_id)
+            .filter(ranked_followups.c.row_number == 1)
+            .all()
+        }
+
+    payload = []
+    for appointment in appointments:
+        item = _serialize_appointment(appointment)
+        latest_followup = latest_followups.get(appointment.id)
+        item.update(
+            {
+                "follow_up_recorded": latest_followup is not None,
+                "latest_follow_up_action": latest_followup.action if latest_followup else None,
+                "latest_follow_up_notes": latest_followup.notes if latest_followup else None,
+                "latest_follow_up_date": latest_followup.follow_up_date.isoformat() if latest_followup else None,
+                "latest_follow_up_status": latest_followup.status if latest_followup else None,
+            }
+        )
+        if appointment.status == "No-Show":
+            completed_count = completion_counts.get(appointment.id, 0)
+            item.update(
+                {
+                    "recommendation_completion_count": completed_count,
+                    "recommendation_completion_total": RECOMMENDATION_TOTAL,
+                    "recommendation_progress_status": (
+                        "Completed" if completed_count >= RECOMMENDATION_TOTAL
+                        else "In Progress" if completed_count > 0
+                        else "Pending"
+                    ),
+                }
+            )
+        payload.append(item)
     cache_service.set(cache_key, payload)
     return payload
 
@@ -85,7 +144,14 @@ def get_appointment_stats(db: Session = Depends(get_db)):
     total = db.query(Appointment).count()
     completed = db.query(Appointment).filter(Appointment.status == "Completed").count()
     no_show = db.query(Appointment).filter(Appointment.status == "No-Show").count()
-    pending = db.query(Appointment).filter(Appointment.follow_up_status == "Pending").count()
+    pending = (
+        db.query(Appointment)
+        .filter(
+            Appointment.status == "No-Show",
+            Appointment.follow_up_status == "Pending",
+        )
+        .count()
+    )
     no_show_rate = round((no_show / total) * 100, 2) if total else 0
     total_today = db.query(Appointment).filter(func.date(Appointment.appointment_date) == datetime.utcnow().date().isoformat()).count()
     upcoming = db.query(Appointment).filter(Appointment.status == "Scheduled").count()

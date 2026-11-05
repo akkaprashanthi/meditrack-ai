@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import Loading from '../components/Loading';
 import ErrorMessage from '../components/ErrorMessage';
@@ -6,10 +7,12 @@ import AppointmentTable from '../components/AppointmentTable';
 import AppointmentDetails from '../components/AppointmentDetails';
 import FollowUpModal from '../components/FollowUpModal';
 import { getFollowUpResultMessage, submitFollowUpAndRefresh } from '../services/followUpSubmission';
+import { getRecommendationPath } from '../services/recommendationWorkflow';
 
 const statusOptions = ['All', 'Scheduled', 'Completed', 'No-Show', 'Cancelled'];
 
 export default function AppointmentsPage() {
+  const navigate = useNavigate();
   const [appointments, setAppointments] = useState([]);
   const [filters, setFilters] = useState({ status: 'All', department: 'All', date: '', search: '' });
   const [sortConfig, setSortConfig] = useState({ sort_by: 'appointment_date', sort_desc: false });
@@ -87,15 +90,7 @@ export default function AppointmentsPage() {
     return sorted;
   }, [appointments, filters.search, sortConfig]);
 
-  const handleGenerateRecommendation = async (id) => {
-    try {
-      const response = await api.get(`/api/recommendations/${id}`);
-      localStorage.setItem('meditrack_recommendations', JSON.stringify(response.data));
-      window.alert('AI recommendations generated successfully.');
-    } catch (err) {
-      window.alert(err.message || 'Unable to generate recommendations.');
-    }
-  };
+  const handleGenerateRecommendation = (id) => navigate(getRecommendationPath(id));
 
   const handleFollowUpSubmit = async (payload) => {
     setFollowUpNotice('');

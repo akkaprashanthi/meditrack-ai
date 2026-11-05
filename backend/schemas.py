@@ -66,6 +66,10 @@ class RecommendationItem(BaseModel):
     priority: Literal["High", "Medium", "Low"]
     suggested_action: str
     category: str
+    completion_status: Literal["Pending", "Completed"] = "Pending"
+    action_taken: str | None = None
+    completion_notes: str | None = None
+    completed_at: datetime | None = None
 
 
 class RecommendationResponse(BaseModel):
@@ -75,6 +79,25 @@ class RecommendationResponse(BaseModel):
     follow_up_priority: str
     ai_insight: str
     recommendations: list[RecommendationItem]
+
+
+class RecommendationCompletionRequest(BaseModel):
+    category: str = Field(min_length=1)
+    action_taken: str = Field(min_length=1)
+    notes: str | None = None
+
+
+class RecommendationCompletionOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    appointment_id: int
+    category: str
+    action_taken: str
+    notes: str | None = None
+    status: Literal["Completed"]
+    completed_at: datetime
+    created_at: datetime
+    updated_at: datetime
 
 
 class CacheStatsResponse(BaseModel):
