@@ -42,14 +42,19 @@ MediTrack AI demonstrates how machine learning and automated workflows can suppo
 - Generates three deterministic recommendations for a no-show appointment.
 - Uses appointment context and predicted risk to inform outreach suggestions.
 - Provides practical actions such as phone calls, rescheduling, and reminder-related follow-up.
-- Helps clinic staff prioritize follow-up activities.
+- Lets staff select a no-show appointment and review its recommendations, pending/completed state, and recorded action details.
+- Tracks recommendation completion separately from ordinary patient outreach.
 
 ### 4. Follow-Up Tracking
 - Record outreach actions and notes.
 - Mark follow-up activities as completed.
 - Persist follow-up information in SQLite.
+- Search and filter the Clinical Outreach Log by patient ID/name, appointment ID, action, status, and date range.
+- Review the latest outreach action, date, status, and notes from the Appointments page.
 - Preserve the original appointment status when an outreach activity is completed.
 - Maintain a separate follow-up history.
+
+Recommendation completion progress is shown separately for each no-show appointment as `0/3 Pending`, `1/3` or `2/3 In Progress`, and `3/3 Completed`. The Dashboard's Pending follow-ups statistic counts no-show appointments whose patient follow-up status is still pending; completing an AI recommendation does not change this count.
 
 ### 5. Analytics Dashboard
 - Display appointment statistics and no-show counts.
@@ -97,7 +102,8 @@ MediTrack AI follows a modular frontend-backend architecture.
              SQLite DB
                 |
                 v
-       Persistent Follow-Up Records
+      Follow-Up and Recommendation
+             Completion Records
 ```
 
 ### Component Overview
@@ -110,7 +116,7 @@ MediTrack AI follows a modular frontend-backend architecture.
 | Recommendation Service | Generates deterministic follow-up recommendations |
 | Cache Service | Stores frequently accessed responses using TTL caching |
 | SQLAlchemy | Database models and persistence |
-| SQLite | Stores appointments and follow-up records |
+| SQLite | Stores appointments, patient follow-up records, and recommendation completion records |
 
 ## Technology Stack
 
@@ -252,9 +258,7 @@ The recommendations are intended to assist clinic staff with operational follow-
 
 ## Database Design
 
-SQLite is used for persistent storage through SQLAlchemy.
-
-The application currently uses two primary tables:
+SQLite is used for persistent storage through SQLAlchemy. The ORM defines three application tables: `Appointment`, `FollowUp`, and `RecommendationCompletion`.
 
 ### Appointments
 
@@ -279,9 +283,19 @@ Stores:
 - Follow-up date.
 - Creation timestamp.
 
+### Recommendation Completions
+
+Stores a staff-recorded action for one generated recommendation:
+
+- Appointment foreign key and the recommendation's stable category.
+- Action taken, optional notes, completion status, and completion, creation, and update timestamps.
+- A database unique constraint on `(appointment_id, category)` associates at most one completion record with each recommendation category per appointment.
+
+Recommendation completions are persisted separately from ordinary patient follow-ups. Repeated completion submissions for the same appointment/category update and return the existing record rather than adding duplicates. Completion status is joined back onto dynamically generated recommendations when the recommendation endpoint is read. The Follow-Ups page displays these completion records in a separate section with independent filters.
+
 On first startup, the application creates missing database tables and inserts 30 synthetic demonstration appointments if the appointment table is empty.
 
-Follow-up completion is stored separately from the original appointment status. For example, an appointment remains `No-Show` even after its follow-up status becomes `Completed`.
+Patient follow-up completion is stored separately from the original appointment status. For example, an appointment remains `No-Show` even after its follow-up status becomes `Completed`. Completing a recommendation also leaves the appointment's original status unchanged.
 
 **Database limitation:** SQLite is suitable for this local demonstration and a single backend instance. A managed database would be more appropriate for concurrent multi-instance production deployments.
 
@@ -294,7 +308,7 @@ MediTrack AI uses `cachetools.TTLCache` to reduce repeated database queries and 
 - Default TTL: 60 seconds.
 - Maximum cache entries: 256.
 - Cached operations: appointment lists, appointment details, appointment statistics, and analytics.
-- Cache invalidation: related entries are removed after follow-up writes.
+- Cache invalidation: appointment list, detail, statistics, and analytics entries are invalidated after patient follow-up writes. Recommendation completion writes invalidate appointment list/detail entries so recommendation progress is refreshed.
 
 ### Local Cache Benchmark
 
@@ -315,6 +329,7 @@ The measured reduction is calculated as:
 A follow-up write also invalidates the relevant appointment-list cache key, ensuring the next read retrieves updated data.
 
 These measurements represent a small local test and are not a production load benchmark or latency guarantee.
+The observed 22.23% median reduction does **not** meet the challenge's 50% target.
 
 ## REST API Endpoints
 
@@ -345,16 +360,22 @@ Supported appointment-list query parameters include `status`, `department`, `pat
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | `/api/recommendations/{appointment_id}` | Retrieve recommendations |
+| GET | `/api/recommendations/{appointment_id}` | Generate and retrieve recommendations with persisted completion state |
 | POST | `/api/recommendations/{appointment_id}/generate` | Generate recommendations for a recorded no-show |
+| POST | `/api/recommendations/{appointment_id}/completions` | Record or update action taken and notes for a recommendation category; repeat submissions reuse the existing completion |
+| GET | `/api/recommendation-completions` | List completed recommendation actions; supports `patient_search`, `appointment_id`, `category`, `action`, `start_date`, and `end_date` filters |
+
+The generated set contains three recommendation categories. Each item is pending until staff record an action, then displayed as completed with the saved action, notes, and timestamp. The Appointments table shows per-appointment progress as `0/3 Pending`, `1/3` or `2/3 In Progress`, or `3/3 Completed`. Completing these items does not mark the appointment attended or change its status.
 
 ### Follow-Ups
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | `/api/followups` | Retrieve follow-up records |
+| GET | `/api/followups` | Retrieve follow-up records; supports `patient_search`, `patient_id`, `appointment_id`, `action`, `status`, `start_date`, and `end_date` filters |
 | POST | `/api/followups` | Create a follow-up record and mark follow-up complete |
 | PATCH | `/api/appointments/{appointment_id}/follow-up` | Follow-up update alias |
+
+The Follow-Ups page keeps the Clinical Outreach Log separate from the Completed Recommendations table. Each table has independent filters. The completed-recommendation table's patient search matches appointment patient ID or name, and its category/action options are populated from completion records.
 
 ### Analytics and Monitoring
 
@@ -481,6 +502,10 @@ Configure backend `CORS_ORIGINS` to include the exact deployed frontend origin.
 
 Never commit actual `.env` files, API keys, passwords, or other credentials.
 
+## Settings Page
+
+The Settings page is informational; clinic details and application preferences are not persisted. Clinic name and contact details are shown as not configured. The default-page and browser-locale values are display-only, and notification preferences state that no channels are configured and the app does not send email or SMS. The application version is read from the frontend package metadata. Backend connection status is actively fetched from `GET /health` and can be checked again from the page.
+
 ## Docker Deployment
 
 The root `Dockerfile` builds the backend container.
@@ -529,7 +554,7 @@ Run from the `backend/` directory:
 python -m pytest -q
 ```
 
-Latest verification: **15 backend tests passed.**
+Latest verification: **29 backend tests passed.**
 
 Test coverage includes:
 
@@ -540,6 +565,8 @@ Test coverage includes:
 - Missing-value preprocessing.
 - Model loading and prediction validation.
 - Recommendation generation.
+- Recommendation completion persistence, repeat-submission behavior, and appointment progress.
+- Follow-up filters, cache invalidation, and pending-follow-up count changes.
 
 ### Frontend Production Build
 
@@ -551,6 +578,8 @@ npm run build
 ```
 
 The latest production build completed successfully.
+
+Latest frontend test verification: **21 tests passed** across Node workflow/helper tests and rendered React component tests. Component coverage includes Dashboard/Settings navigation, appointment-specific recommendation completion, Follow-Ups filters, and follow-up submission refresh behavior.
 
 Vite reports an advisory that the main minified JavaScript bundle exceeds 500 kB. This does not prevent the production build from succeeding.
 
